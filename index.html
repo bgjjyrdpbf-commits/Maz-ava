@@ -175,7 +175,23 @@ details p { padding: 0 44px 24px 0; }
 
 /* Appel à l'action */
 .appel { background: var(--fond-doux); border-top: 1px solid var(--trait); }
-.appel .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px; }
+.appel .wrap { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
+.appel-tel { margin-top: 28px; }
+.coordonnees { margin-top: 32px; border-top: 1px solid var(--trait); }
+.coordonnees div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--trait); }
+.coordonnees dt { color: var(--doux); font-size: .9rem; }
+.coordonnees dd a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.coordonnees dd a:hover { color: var(--lien); }
+.formulaire { background: var(--fond); border: 1px solid var(--trait); border-radius: 18px; padding: clamp(22px, 3vw, 36px); display: grid; gap: 18px; }
+.champs-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.champ label { display: block; font-size: .9rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.champ input, .champ textarea { width: 100%; font: inherit; font-size: 1rem; padding: 12px 14px; border: 1px solid var(--trait-fort); border-radius: 10px; color: var(--texte); background: var(--fond); }
+.champ textarea { resize: vertical; min-height: 130px; }
+.champ input:focus, .champ textarea:focus { outline: 3px solid rgba(47,107,255,.35); outline-offset: 1px; border-color: var(--bleu); }
+.champ .invalide { border-color: #C62828; }
+.formulaire-note { color: var(--doux); font-size: .9rem; }
+.formulaire-erreur { color: #B3261E; font-weight: 600; font-size: .95rem; }
+.formulaire .btn { justify-self: start; border: 0; cursor: pointer; font: inherit; font-weight: 600; }
 .appel h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18ch; }
 .appel p { margin-top: 12px; }
 
@@ -242,6 +258,7 @@ details p { padding: 0 44px 24px 0; }
   .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
   .engagements ul { grid-template-columns: 1fr; }
+  .appel .wrap { grid-template-columns: 1fr; }
   .marques { grid-template-columns: 1fr; }
   .etapes li:nth-child(2)::after { display: none; }
 }
@@ -270,7 +287,8 @@ details p { padding: 0 44px 24px 0; }
   .chat-bouton span { display: none; }
   .chat-panneau { width: 100%; max-height: calc(100vh - 96px); }
   .chat-saisie input { font-size: 1rem; }
-  .liste, .etapes, .comparaison, .ia-liste, .engagements ul { grid-template-columns: 1fr; }
+  .liste, .etapes, .comparaison, .ia-liste, .engagements ul, .champs-duo { grid-template-columns: 1fr; }
+  .coordonnees div { grid-template-columns: 90px 1fr; }
   .etapes li::after { display: none; }
   .actions .btn { width: 100%; text-align: center; }
   .mosaique { height: 300px; gap: 10px; }
@@ -552,11 +570,26 @@ details p { padding: 0 44px 24px 0; }
 
   <section class="appel" id="contact">
     <div class="wrap">
-      <div>
+      <div class="appel-texte">
         <h2>Parlons de votre projet</h2>
-        <p>Décrivez votre situation en quelques lignes : nombre de sites, outils en place, difficultés rencontrées. Nous revenons vers vous pour organiser un premier échange.</p>
+        <p>Décrivez votre besoin : nous revenons vers vous avec un diagnostic et une proposition adaptée à votre structure.</p>
+        <a class="btn btn-plein appel-tel" href="tel:+33199001234">Appeler le 01 99 00 12 34</a>
+        <dl class="coordonnees">
+          <div><dt>Téléphone</dt><dd><a href="tel:+33199001234">01 99 00 12 34</a></dd></div>
+          <div><dt>E-mail</dt><dd><a href="mailto:contact@maz-ava.fr">contact@maz-ava.fr</a></dd></div>
+        </dl>
       </div>
-      <a class="btn btn-plein" href="mailto:contact@maz-ava.fr?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AEntreprise%20%3A%0ANombre%20de%20sites%20%3A%0AVotre%20besoin%20%3A%0A%0ACordialement">Écrire à contact@maz-ava.fr</a>
+      <form class="formulaire" id="formulaire" novalidate>
+        <div class="champs-duo">
+          <div class="champ"><label for="f-nom">Nom</label><input id="f-nom" name="nom" type="text" autocomplete="family-name" required></div>
+          <div class="champ"><label for="f-prenom">Prénom</label><input id="f-prenom" name="prenom" type="text" autocomplete="given-name" required></div>
+        </div>
+        <div class="champ"><label for="f-mail">Adresse e-mail</label><input id="f-mail" name="mail" type="email" autocomplete="email" required></div>
+        <div class="champ"><label for="f-message">Message</label><textarea id="f-message" name="message" rows="5" required></textarea></div>
+        <p class="formulaire-note">Les informations saisies servent uniquement à traiter votre demande.</p>
+        <p class="formulaire-erreur" id="f-erreur" role="alert" hidden></p>
+        <button class="btn btn-plein" type="submit">Envoyer la demande</button>
+      </form>
     </div>
   </section>
 </main>
@@ -588,6 +621,7 @@ details p { padding: 0 44px 24px 0; }
       <div>
         <h3>Contact</h3>
         <ul>
+          <li><a href="tel:+33199001234">01 99 00 12 34</a></li>
           <li><a href="mailto:contact@maz-ava.fr">contact@maz-ava.fr</a></li>
           <li><a href="#methode">Notre méthode</a></li>
           <li><a href="#questions">Questions fréquentes</a></li>
@@ -768,6 +802,25 @@ details p { padding: 0 44px 24px 0; }
       dire("Je n'ai pas de réponse précise à cette question. Choisissez un sujet ci-dessous, ou écrivez à l'équipe : un humain vous répondra.", 'bot');
       puces(PUCES, texte);
     }
+  });
+})();
+(function () {
+  var f = document.getElementById('formulaire');
+  if (!f) return;
+  var err = document.getElementById('f-erreur');
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ch = ['f-nom', 'f-prenom', 'f-mail', 'f-message'].map(function (id) { return document.getElementById(id); });
+    var ko = false;
+    ch.forEach(function (c) {
+      var ok = c.value.trim() !== '' && (c.type !== 'email' || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.value.trim()));
+      c.classList.toggle('invalide', !ok);
+      if (!ok) ko = true;
+    });
+    if (ko) { err.textContent = 'Merci de renseigner tous les champs avec une adresse e-mail valide.'; err.hidden = false; return; }
+    err.hidden = true;
+    var corps = 'Nom : ' + ch[0].value.trim() + '\nPrénom : ' + ch[1].value.trim() + '\nE-mail : ' + ch[2].value.trim() + '\n\n' + ch[3].value.trim();
+    window.location.href = 'mailto:contact@maz-ava.fr?subject=' + encodeURIComponent('Demande de contact via le site') + '&body=' + encodeURIComponent(corps);
   });
 })();
 </script>
