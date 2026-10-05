@@ -95,28 +95,12 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .entete { margin-bottom: 48px; }
 .entete h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); max-width: 20ch; }
 .entete p { margin-top: 16px; }
-.vedette {
-  position: relative;
-  background: var(--encre);
-  border: 1px solid var(--trait);
-  border-radius: 16px;
-  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 52px) clamp(28px, 4vw, 48px) clamp(30px, 4vw, 56px);
-  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 36px 56px;
-  overflow: hidden;
-}
-.vedette::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--degrade); }
-.vedette h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
-.vedette p { margin-top: 14px; }
-.vedette ul { list-style: none; align-self: center; }
-.vedette li { padding: 13px 0; border-top: 1px solid var(--trait); color: var(--texte); font-weight: 500; }
-.vedette li:last-child { border-bottom: 1px solid var(--trait); }
-.vedette li span { display: block; color: var(--doux); font-weight: 400; font-size: 0.95rem; }
-.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 48px; }
+.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
 .liste > div { border-top: 1px solid var(--trait); padding: 28px 0 36px; }
 .liste h3 { font-size: 1.35rem; }
 .liste p { margin-top: 10px; font-size: 1rem; }
-.liste .invitation { display: flex; flex-direction: column; justify-content: center; }
-.liste .invitation a { margin-top: 12px; font-weight: 600; color: var(--turquoise); text-underline-offset: 4px; }
+.invitation-ligne { margin-top: 36px; color: var(--doux); }
+.invitation-ligne a { color: var(--turquoise); font-weight: 600; text-underline-offset: 4px; margin-left: 8px; }
 
 /* Pourquoi */
 .pourquoi { background: var(--encre); border-block: 1px solid var(--trait); }
@@ -161,7 +145,6 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
   .nav .nav-contact { margin-top: 16px; text-align: center; border-bottom: 0; padding: 13px 18px; }
   .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
   .portail { max-width: 280px; justify-self: start; }
-  .vedette { grid-template-columns: 1fr; }
   .pied { grid-template-columns: 1fr 1fr; }
   .pied > :first-child { grid-column: 1 / -1; }
 }
@@ -211,7 +194,7 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
     <div class="wrap">
       <div>
         <h1>Une informatique claire, accessible et intelligente.</h1>
-        <p>MAZ-AVA Technologies accompagne les entreprises en infogérance, réseaux, cloud, cybersécurité, téléphonie opérateur et infrastructure, avec un seul interlocuteur.</p>
+        <p>MAZ-AVA Technologies prend en charge tous les métiers de l'IT des entreprises, de l'infogérance à la téléphonie opérateur, avec un seul interlocuteur.</p>
         <div class="actions">
           <a class="btn btn-plein" href="mailto:contact@maz-ava.fr">Nous écrire</a>
           <a class="btn btn-ligne" href="#services">Voir nos services</a>
@@ -246,20 +229,8 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
     <div class="wrap">
       <div class="entete">
         <h2>Ce que nous prenons en charge</h2>
-        <p>Du poste de travail à la ligne opérateur, nous couvrons l'ensemble du système d'information et de la téléphonie de l'entreprise.</p>
+        <p>Tous les métiers de l'IT réunis chez un seul prestataire, du poste de travail à la ligne opérateur.</p>
       </div>
-
-      <article class="vedette">
-        <div>
-          <h3>Téléphonie opérateur</h3>
-          <p>Nous gérons la voix de l'entreprise de bout en bout : choix et suivi des opérateurs, trunks SIP, portabilité des numéros et migration de la téléphonie vers 3CX.</p>
-        </div>
-        <ul>
-          <li>Trunks SIP et lignes opérateur<span>Raccordement, suivi et résolution des incidents</span></li>
-          <li>Portabilité des numéros<span>Préparation, bascule et vérification</span></li>
-          <li>Migration vers 3CX<span>Du cadrage à la mise en service</span></li>
-        </ul>
-      </article>
 
       <div class="liste">
         <div>
@@ -269,6 +240,10 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
         <div>
           <h3>Réseaux</h3>
           <p>Conception, déploiement et sécurisation des réseaux locaux, du Wi-Fi et des liaisons entre sites.</p>
+        </div>
+        <div>
+          <h3>Téléphonie opérateur</h3>
+          <p>Opérateurs, trunks SIP, portabilité des numéros et migration vers 3CX : toute la voix de l'entreprise, gérée de bout en bout.</p>
         </div>
         <div>
           <h3>Cloud</h3>
@@ -282,11 +257,8 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
           <h3>Infrastructure</h3>
           <p>Serveurs, virtualisation et locaux techniques : architecture, mise en place et modernisation.</p>
         </div>
-        <div class="invitation">
-          <h3>Un besoin à cheval sur plusieurs domaines ?</h3>
-          <a href="mailto:contact@maz-ava.fr">Décrivez-le nous</a>
-        </div>
       </div>
+      <p class="invitation-ligne">Un besoin à cheval sur plusieurs domaines ?<a href="mailto:contact@maz-ava.fr">Décrivez-le nous</a></p>
     </div>
   </section>
 
@@ -340,9 +312,9 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
       <div>
         <h3>Services</h3>
         <ul>
-          <li><a href="#services">Téléphonie opérateur</a></li>
           <li><a href="#services">Infogérance et maintenance</a></li>
           <li><a href="#services">Réseaux</a></li>
+          <li><a href="#services">Téléphonie opérateur</a></li>
           <li><a href="#services">Cloud</a></li>
           <li><a href="#services">Cybersécurité</a></li>
           <li><a href="#services">Infrastructure</a></li>
