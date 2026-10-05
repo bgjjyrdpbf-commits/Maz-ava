@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAZ-AVA Technologies | IT et télécom pour les entreprises</title>
 <meta name="description" content="Offre globale tout-en-un, à 360° et clé en main : infogérance, réseaux, téléphonie opérateur, cloud, cybersécurité et infrastructure, avec un interlocuteur unique.">
-<meta name="theme-color" content="#0A1530">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,21 +13,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --nuit: #0A1530;
-  --encre: #0F1E42;
-  --trait: #22345F;
-  --texte: #F2F6FF;
-  --doux: #A9B8D6;
+  --fond: #FFFFFF;
+  --fond-doux: #F2F5FA;
+  --ink: #0E1D3F;
+  --texte: #0E1D3F;
+  --doux: #51627F;
+  --trait: #DCE3EF;
+  --trait-fort: #B9C6DD;
   --bleu: #2F6BFF;
   --turquoise: #19D3C5;
+  --lien: #087A72;
   --degrade: linear-gradient(120deg, var(--bleu), var(--turquoise));
   --titres: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
   --texte-police: "Public Sans", "Segoe UI", system-ui, sans-serif;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { color-scheme: light; scroll-behavior: smooth; scroll-padding-top: 84px; }
 body {
-  background: var(--nuit);
+  background: var(--fond);
   color: var(--texte);
   font-family: var(--texte-police);
   font-size: 1.0625rem;
@@ -36,7 +39,7 @@ body {
 }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
-:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; border-radius: 4px; }
+:focus-visible { outline: 2px solid var(--bleu); outline-offset: 3px; border-radius: 4px; }
 .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
 h1, h2, h3 { font-family: var(--titres); font-weight: 600; letter-spacing: -0.015em; line-height: 1.12; }
 p { color: var(--doux); max-width: 58ch; }
@@ -48,7 +51,7 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 /* En-tête */
 .site-header {
   position: sticky; top: 0; z-index: 10;
-  background: rgba(10, 21, 48, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--trait);
 }
@@ -60,9 +63,9 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .nav { display: flex; align-items: center; gap: 30px; }
 .nav a { text-decoration: none; color: var(--doux); font-weight: 500; font-size: 0.97rem; transition: color .15s; }
 .nav a:hover { color: var(--texte); }
-.nav .nav-contact { color: var(--nuit); background: var(--turquoise); padding: 9px 18px; border-radius: 999px; font-weight: 600; }
-.nav .nav-contact:hover { color: var(--nuit); background: #5FE6DA; }
-.burger { display: none; background: none; border: 1px solid var(--trait); color: var(--texte); width: 44px; height: 44px; border-radius: 10px; cursor: pointer; }
+.nav .nav-contact { color: var(--ink); background: var(--turquoise); padding: 9px 18px; border-radius: 999px; font-weight: 600; }
+.nav .nav-contact:hover { color: var(--ink); background: #5FE6DA; }
+.burger { display: none; background: none; border: 1px solid var(--trait-fort); color: var(--texte); width: 44px; height: 44px; border-radius: 10px; cursor: pointer; }
 .burger span, .burger span::before, .burger span::after { display: block; width: 18px; height: 2px; background: currentColor; margin: auto; position: relative; transition: transform .2s, background .2s; }
 .burger span::before, .burger span::after { content: ""; position: absolute; left: 0; }
 .burger span::before { top: -6px; }
@@ -74,10 +77,10 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 /* Boutons */
 .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 .btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 999px; transition: background .15s, border-color .15s; }
-.btn-plein { background: var(--turquoise); color: var(--nuit); }
+.btn-plein { background: var(--turquoise); color: var(--ink); }
 .btn-plein:hover { background: #5FE6DA; }
-.btn-ligne { border: 1px solid var(--trait); color: var(--texte); }
-.btn-ligne:hover { border-color: var(--doux); }
+.btn-ligne { border: 1px solid var(--trait-fort); color: var(--texte); }
+.btn-ligne:hover { border-color: var(--ink); }
 
 /* Accueil : la mosaïque reprend le logo (deux montants hauts, un court, un point) */
 .hero { padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(40px, 6vw, 72px); overflow: hidden; }
@@ -85,14 +88,13 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.025em; }
 .hero p { font-size: 1.15rem; margin-top: 26px; }
 .mosaique { position: relative; display: grid; grid-template-columns: 1fr 0.82fr 1fr; gap: 14px; align-items: end; height: clamp(340px, 40vw, 500px); }
-.panneau { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--trait); background: var(--encre); margin: 0; }
+.panneau { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--trait); background: var(--fond-doux); margin: 0; }
 .panneau img { width: 100%; height: 100%; object-fit: cover; }
-.panneau::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 21, 48, 0.55), rgba(10, 21, 48, 0) 60%); pointer-events: none; }
 .p1, .p3 { height: 100%; }
 .p2 { height: 62%; }
 .p2 img { object-position: 30% 50%; }
 .p3 img { object-position: 38% 50%; }
-.lumiere { position: absolute; left: 50%; top: calc(38% - 42px); width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: var(--degrade); box-shadow: 0 0 0 8px rgba(25, 211, 197, 0.12), 0 0 40px 8px rgba(25, 211, 197, 0.45); }
+.lumiere { position: absolute; left: 50%; top: calc(38% - 42px); width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: var(--degrade); box-shadow: 0 0 0 8px rgba(25, 211, 197, 0.18), 0 0 30px 6px rgba(25, 211, 197, 0.35); }
 @media (prefers-reduced-motion: no-preference) {
   .panneau { animation: lever .9s cubic-bezier(.2, .7, .2, 1) both; }
   .p3 { animation-delay: .12s; }
@@ -103,9 +105,9 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 }
 
 /* Un seul interlocuteur */
-.interlocuteur { background: var(--encre); border-block: 1px solid var(--trait); }
+.interlocuteur { background: var(--fond-doux); border-block: 1px solid var(--trait); }
 .interlocuteur .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 80px); align-items: center; }
-.interlocuteur figure { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: var(--nuit); border: 1px solid var(--trait); }
+.interlocuteur figure { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: var(--fond); border: 1px solid var(--trait); }
 .interlocuteur figure img { width: 100%; height: 100%; object-fit: cover; }
 .interlocuteur h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
 .comparaison { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; margin-top: 36px; }
@@ -115,37 +117,37 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .comparaison li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
 .comparaison .avant li::before { content: "\2212"; color: var(--doux); }
 .comparaison .apres li { color: var(--texte); }
-.comparaison .apres li::before { content: "+"; color: var(--turquoise); }
+.comparaison .apres li::before { content: "+"; color: var(--lien); }
 
 /* Services */
 .liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px 36px; }
-.service figure { aspect-ratio: 3 / 2; border-radius: 14px; overflow: hidden; background: var(--encre); border: 1px solid var(--trait); }
+.service figure { aspect-ratio: 3 / 2; border-radius: 14px; overflow: hidden; background: var(--fond-doux); border: 1px solid var(--trait); }
 .service figure img { width: 100%; height: 100%; object-fit: cover; }
 .service h3 { font-size: 1.35rem; margin-top: 20px; }
 .service p { margin-top: 8px; font-size: 1rem; }
 .invitation-ligne { margin-top: 48px; color: var(--doux); }
-.invitation-ligne a { color: var(--turquoise); font-weight: 600; text-underline-offset: 4px; margin-left: 8px; }
+.invitation-ligne a { color: var(--lien); font-weight: 600; text-underline-offset: 4px; margin-left: 8px; }
 
 /* Méthode : une vraie suite d'étapes, donc numérotée */
-.methode { background: var(--encre); border-block: 1px solid var(--trait); }
+.methode { background: var(--fond-doux); border-block: 1px solid var(--trait); }
 .etapes { list-style: none; counter-reset: etape; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
 .etapes li { counter-increment: etape; position: relative; padding-top: 68px; }
 .etapes li::before {
   content: counter(etape);
   position: absolute; top: 0; left: 0; width: 46px; height: 46px; border-radius: 50%;
   display: grid; place-items: center;
-  font-family: var(--titres); font-weight: 600; font-size: 1.15rem; color: var(--nuit);
-  background: var(--degrade);
+  font-family: var(--titres); font-weight: 600; font-size: 1.15rem; color: var(--ink);
+  background: var(--turquoise);
 }
-.etapes li:not(:last-child)::after { content: ""; position: absolute; top: 22px; left: 60px; right: -18px; height: 2px; background: linear-gradient(90deg, var(--trait), rgba(34, 52, 95, 0)); }
+.etapes li:not(:last-child)::after { content: ""; position: absolute; top: 22px; left: 60px; right: -18px; height: 2px; background: linear-gradient(90deg, var(--trait-fort), rgba(185, 198, 221, 0)); }
 .etapes h3 { font-size: 1.25rem; }
 .etapes p { margin-top: 8px; font-size: 1rem; }
 
 
 /* Environnements maîtrisés */
-.environnements { padding-top: 0; }
+.environnements { padding-bottom: 0; }
 .puces { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
-.puces li { padding: 11px 20px; border: 1px solid var(--trait); border-radius: 999px; color: var(--texte); font-weight: 500; background: var(--nuit); }
+.puces li { padding: 11px 20px; border: 1px solid var(--trait); border-radius: 999px; color: var(--texte); font-weight: 500; background: var(--fond-doux); }
 
 /* Questions */
 .questions .wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
@@ -155,12 +157,12 @@ details { border-top: 1px solid var(--trait); }
 details:last-child { border-bottom: 1px solid var(--trait); }
 summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; font-family: var(--titres); font-weight: 600; font-size: 1.2rem; position: relative; }
 summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 400; color: var(--turquoise); transition: transform .2s; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 400; color: var(--lien); transition: transform .2s; }
 details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
 details p { padding: 0 44px 24px 0; }
 
 /* Appel à l'action */
-.appel { background: var(--encre); border-top: 1px solid var(--trait); }
+.appel { background: var(--fond-doux); border-top: 1px solid var(--trait); }
 .appel .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px; }
 .appel h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18ch; }
 .appel p { margin-top: 12px; }
@@ -190,7 +192,7 @@ details p { padding: 0 44px 24px 0; }
   .nav {
     display: none; position: absolute; top: 68px; left: 0; right: 0;
     flex-direction: column; align-items: stretch; gap: 0;
-    background: var(--nuit); border-bottom: 1px solid var(--trait); padding: 8px 20px 20px;
+    background: var(--fond); border-bottom: 1px solid var(--trait); padding: 8px 20px 20px;
   }
   .nav.ouvert { display: flex; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--trait); }
