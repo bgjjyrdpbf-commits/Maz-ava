@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAZ-AVA Technologies | IT et télécom pour les entreprises</title>
-<meta name="description" content="MAZ-AVA Technologies prend en charge tous les métiers de l'IT : infogérance, réseaux, téléphonie opérateur, cloud, cybersécurité et infrastructure, avec un seul interlocuteur.">
+<meta name="description" content="Offre globale tout-en-un, à 360° et clé en main : infogérance, réseaux, téléphonie opérateur, cloud, cybersécurité et infrastructure, avec un interlocuteur unique.">
 <meta name="theme-color" content="#0A1530">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,15 +141,9 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .etapes h3 { font-size: 1.25rem; }
 .etapes p { margin-top: 8px; font-size: 1rem; }
 
-/* Pourquoi */
-.piliers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
-.piliers div { position: relative; padding-top: 22px; }
-.piliers div::before { content: ""; position: absolute; top: 0; left: 0; width: 44px; height: 3px; background: var(--degrade); border-radius: 2px; }
-.piliers h3 { font-size: 1.3rem; }
-.piliers p { margin-top: 10px; font-size: 1rem; }
 
 /* Environnements maîtrisés */
-.environnements { background: var(--encre); border-block: 1px solid var(--trait); }
+.environnements { padding-top: 0; }
 .puces { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
 .puces li { padding: 11px 20px; border: 1px solid var(--trait); border-radius: 999px; color: var(--texte); font-weight: 500; background: var(--nuit); }
 
@@ -187,7 +181,6 @@ details p { padding: 0 44px 24px 0; }
 
 /* Adaptatif */
 @media (max-width: 1000px) {
-  .piliers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
   .etapes li:nth-child(2)::after { display: none; }
@@ -211,8 +204,7 @@ details p { padding: 0 44px 24px 0; }
   .pied > :first-child { grid-column: 1 / -1; }
 }
 @media (max-width: 600px) {
-  .liste, .piliers, .etapes, .comparaison { grid-template-columns: 1fr; }
-  .etapes li::after { display: none; }
+  .liste,  .etapes li::after { display: none; }
   .actions .btn { width: 100%; text-align: center; }
   .mosaique { height: 300px; gap: 10px; }
 }
@@ -247,7 +239,6 @@ details p { padding: 0 44px 24px 0; }
     <nav class="nav" id="menu" aria-label="Navigation principale">
       <a href="#services">Services</a>
       <a href="#methode">Méthode</a>
-      <a href="#pourquoi">Pourquoi MAZ-AVA</a>
       <a href="#questions">Questions</a>
       <a class="nav-contact" href="#contact">Nous contacter</a>
     </nav>
@@ -259,9 +250,9 @@ details p { padding: 0 44px 24px 0; }
     <div class="wrap">
       <div>
         <h1>Une informatique claire, accessible et intelligente.</h1>
-        <p>MAZ-AVA Technologies prend en charge tous les métiers de l'IT des entreprises, de l'infogérance à la téléphonie opérateur, avec un seul interlocuteur.</p>
+        <p>Une offre globale, tout-en-un et clé en main : informatique, télécom et sécurité pris en charge de A à Z par MAZ-AVA Technologies, avec un interlocuteur unique.</p>
         <div class="actions">
-          <a class="btn btn-plein" href="mailto:contact@maz-ava.fr">Nous écrire</a>
+          <a class="btn btn-plein" href="mailto:contact@maz-ava.fr?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AEntreprise%20%3A%0ANombre%20de%20sites%20%3A%0AVotre%20besoin%20%3A%0A%0ACordialement">Demander un diagnostic</a>
           <a class="btn btn-ligne" href="#services">Voir nos services</a>
         </div>
       </div>
@@ -278,8 +269,8 @@ details p { padding: 0 44px 24px 0; }
     <div class="wrap">
       <figure><img src="https://images.unsplash.com/photo-1757405930202-b2c3e11570fc?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="1000" loading="lazy" alt="Trois collègues réunis autour d'un ordinateur portable dans une salle de réunion"></figure>
       <div>
-        <h2>Un seul interlocuteur pour tout votre système d'information</h2>
-        <p style="margin-top:16px">Réseau, téléphonie, sécurité, postes de travail : tout ce qui touche à votre informatique et à votre télécom passe par le même contact.</p>
+        <h2>Une offre à 360°, un interlocuteur unique</h2>
+        <p style="margin-top:16px">Réseau, téléphonie, sécurité, cloud, postes de travail : nous couvrons l'ensemble de votre informatique et de votre télécom, de l'audit à l'exploitation. Vous n'avez qu'un seul contact, et le projet est livré clé en main.</p>
         <div class="comparaison">
           <div class="avant">
             <h3>Souvent aujourd'hui</h3>
@@ -294,7 +285,7 @@ details p { padding: 0 44px 24px 0; }
             <ul>
               <li>Un seul contact pour l'informatique, le télécom et la sécurité.</li>
               <li>Un diagnostic complet, sans renvoi entre prestataires.</li>
-              <li>Un seul suivi, un seul compte rendu, une vue d'ensemble.</li>
+              <li>Un seul suivi et une vue d'ensemble de votre système d'information.</li>
             </ul>
           </div>
         </div>
@@ -306,7 +297,7 @@ details p { padding: 0 44px 24px 0; }
     <div class="wrap">
       <div class="entete">
         <h2>Ce que nous prenons en charge</h2>
-        <p>Tous les métiers de l'IT réunis chez un seul prestataire, du poste de travail à la ligne opérateur.</p>
+        <p>Tous les métiers de l'IT réunis dans une seule offre, du poste de travail à la ligne opérateur.</p>
       </div>
 
       <div class="liste">
@@ -372,36 +363,10 @@ details p { padding: 0 44px 24px 0; }
     </div>
   </section>
 
-  <section id="pourquoi">
-    <div class="wrap">
-      <div class="entete">
-        <h2>Pourquoi MAZ-AVA</h2>
-      </div>
-      <div class="piliers">
-        <div>
-          <h3>Clarté et simplicité</h3>
-          <p>Des offres lisibles, des devis détaillés et des comptes rendus sans jargon.</p>
-        </div>
-        <div>
-          <h3>Confiance</h3>
-          <p>Des engagements écrits et un suivi régulier de ce qui est installé, décidé et à venir.</p>
-        </div>
-        <div>
-          <h3>Innovation</h3>
-          <p>Des outils de supervision et d'automatisation choisis pour faire gagner du temps aux équipes.</p>
-        </div>
-        <div>
-          <h3>Maîtrise technique</h3>
-          <p>Une expertise de terrain, des postes de travail jusqu'aux opérateurs télécom.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="environnements" id="environnements">
     <div class="wrap">
       <div class="entete">
-        <h2>Les environnements que nous maîtrisons</h2>
+        <h2>Les environnements sur lesquels nous intervenons</h2>
         <p>Nous intervenons sur les solutions que les entreprises utilisent déjà, sans les remplacer par principe.</p>
       </div>
       <ul class="puces">
@@ -423,20 +388,20 @@ details p { padding: 0 44px 24px 0; }
       </div>
       <div>
         <details>
-          <summary>Je travaille déjà avec plusieurs prestataires. Comment se passe la reprise ?</summary>
-          <p>Nous commençons par un audit de l'existant, puis nous reprenons les domaines un par un, au rythme qui vous convient. Vos contrats en cours sont respectés.</p>
+          <summary>Je travaille déjà avec d'autres prestataires. Comment se passe la reprise ?</summary>
+          <p>Nous partons d'un audit de l'existant, puis nous proposons une reprise par étapes, domaine par domaine. Le calendrier se décide avec vous.</p>
         </details>
         <details>
           <summary>Puis-je ne confier qu'un domaine pour commencer ?</summary>
-          <p>Oui. Beaucoup de projets démarrent par un seul sujet, comme la téléphonie ou la sécurité. Les autres domaines peuvent suivre quand vous le souhaitez.</p>
+          <p>Oui. Vous pouvez démarrer par un sujet précis, comme la téléphonie ou la sécurité, et élargir ensuite si vous le souhaitez.</p>
         </details>
         <details>
-          <summary>Comment les prestations sont-elles chiffrées ?</summary>
-          <p>Chaque intervention fait l'objet d'un devis détaillé, validé avant le début des travaux.</p>
+          <summary>Comment une prestation est-elle chiffrée ?</summary>
+          <p>Après l'audit, nous vous remettons un devis détaillé. Rien ne démarre sans votre validation.</p>
         </details>
         <details>
-          <summary>Garde-t-on la main sur nos accès et notre documentation ?</summary>
-          <p>Oui. Vos accès, vos configurations et votre documentation restent les vôtres, et vous y avez accès à tout moment.</p>
+          <summary>À qui m'adresser en cas d'incident ?</summary>
+          <p>À votre interlocuteur unique, quel que soit le domaine concerné. Les modalités de support sont précisées dans votre contrat.</p>
         </details>
       </div>
     </div>
@@ -445,10 +410,10 @@ details p { padding: 0 44px 24px 0; }
   <section class="appel" id="contact">
     <div class="wrap">
       <div>
-        <h2>Un projet, un incident, une question ?</h2>
-        <p>Écrivez-nous en quelques lignes, nous reviendrons vers vous avec un plan d'action.</p>
+        <h2>Parlons de votre projet</h2>
+        <p>Décrivez votre situation en quelques lignes : nombre de sites, outils en place, difficultés rencontrées. Nous revenons vers vous pour organiser un premier échange.</p>
       </div>
-      <a class="btn btn-plein" href="mailto:contact@maz-ava.fr">Écrire à contact@maz-ava.fr</a>
+      <a class="btn btn-plein" href="mailto:contact@maz-ava.fr?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AEntreprise%20%3A%0ANombre%20de%20sites%20%3A%0AVotre%20besoin%20%3A%0A%0ACordialement">Écrire à contact@maz-ava.fr</a>
     </div>
   </section>
 </main>
