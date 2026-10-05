@@ -232,11 +232,17 @@ details p { padding: 0 44px 24px 0; }
 .engagements li strong { display: block; font-family: var(--titres); font-size: 1.08rem; color: var(--ink); margin-bottom: 6px; }
 .engagements li span { color: var(--doux); }
 
+.marques { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 48px; }
+.marques-groupe h3 { font-size: .85rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--doux); margin-bottom: 14px; }
+.marques-groupe ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+.marques-groupe li { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 20px; border: 1px solid var(--trait); border-radius: 14px; background: var(--fond); font-weight: 600; color: var(--ink); }
+.marques-groupe li img { height: 28px; width: auto; max-width: 96px; object-fit: contain; }
 /* Adaptatif */
 @media (max-width: 1000px) {
   .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
   .engagements ul { grid-template-columns: 1fr; }
+  .marques { grid-template-columns: 1fr; }
   .etapes li:nth-child(2)::after { display: none; }
 }
 @media (max-width: 860px) {
@@ -477,15 +483,44 @@ details p { padding: 0 44px 24px 0; }
         <h2>Les environnements sur lesquels nous intervenons</h2>
         <p>Nous intervenons sur les solutions que les entreprises utilisent déjà, sans les remplacer par principe.</p>
       </div>
-      <ul class="puces">
-        <li>Microsoft 365 et Azure</li>
-        <li>3CX</li>
-        <li>Trunks SIP et opérateurs</li>
-        <li>SonicWall</li>
-        <li>MikroTik</li>
-        <li>Bitdefender</li>
-        <li>Veeam</li>
-      </ul>
+      <div class="marques">
+        <div class="marques-groupe">
+          <h3>Pare-feu</h3>
+          <ul>
+            <li><img src="logos/zyxel.svg" alt="" loading="lazy" onerror="this.remove()"><span>Zyxel</span></li>
+            <li><img src="logos/sonicwall.svg" alt="" loading="lazy" onerror="this.remove()"><span>SonicWall</span></li>
+          </ul>
+        </div>
+        <div class="marques-groupe">
+          <h3>Réseau et Wi-Fi</h3>
+          <ul>
+            <li><img src="logos/unifi.svg" alt="" loading="lazy" onerror="this.remove()"><span>UniFi</span></li>
+            <li><img src="logos/hpe.svg" alt="" loading="lazy" onerror="this.remove()"><span>HPE</span></li>
+          </ul>
+        </div>
+        <div class="marques-groupe">
+          <h3>Sécurité des postes et de la messagerie</h3>
+          <ul>
+            <li><img src="logos/sentinelone.svg" alt="" loading="lazy" onerror="this.remove()"><span>SentinelOne</span></li>
+            <li><img src="logos/bitdefender.svg" alt="" loading="lazy" onerror="this.remove()"><span>Bitdefender</span></li>
+            <li><img src="logos/hornetsecurity.svg" alt="" loading="lazy" onerror="this.remove()"><span>Hornetsecurity</span></li>
+          </ul>
+        </div>
+        <div class="marques-groupe">
+          <h3>Téléphonie</h3>
+          <ul>
+            <li><img src="logos/3cx.svg" alt="" loading="lazy" onerror="this.remove()"><span>3CX</span></li>
+            <li><img src="logos/yealink.svg" alt="" loading="lazy" onerror="this.remove()"><span>Yealink</span></li>
+            <li><img src="logos/yeastar.svg" alt="" loading="lazy" onerror="this.remove()"><span>Yeastar</span></li>
+          </ul>
+        </div>
+        <div class="marques-groupe">
+          <h3>Cloud</h3>
+          <ul>
+            <li><img src="logos/microsoft.svg" alt="" loading="lazy" onerror="this.remove()"><span>Microsoft 365 et Azure</span></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
