@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MAZ-AVA Technologies | IT et télécom pour les entreprises</title>
-<meta name="description" content="Offre globale tout-en-un, à 360° et clé en main : infogérance, réseaux, téléphonie opérateur, cloud, cybersécurité, infrastructure et intelligence artificielle, avec un interlocuteur unique.">
+<title>MAZ-AVA Technologies | Experts IT, télécom et sécurité</title>
+<meta name="description" content="Offre globale tout-en-un, à 360° et clé en main : infogérance, bureautique, réseaux, téléphonie opérateur, cloud, cybersécurité, sécurité électronique, infrastructure et intelligence artificielle, avec un interlocuteur unique.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -92,7 +92,7 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 /* Accueil : la mosaïque reprend le logo (deux montants hauts, un court, un point) */
 .hero { padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(40px, 6vw, 72px); overflow: hidden; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
-.hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.025em; }
+.hero h1 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.025em; }
 .hero p { font-size: 1.15rem; margin-top: 26px; }
 .mosaique { position: relative; display: grid; grid-template-columns: 1fr 0.82fr 1fr; gap: 14px; align-items: end; height: clamp(340px, 40vw, 500px); }
 .panneau { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--trait); background: var(--fond-doux); margin: 0; }
@@ -134,10 +134,10 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .ia figure { aspect-ratio: 3 / 2; border-radius: 18px; overflow: hidden; border: 1px solid var(--trait); background: var(--fond); }
 
 /* Services */
-.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px 36px; }
+.liste { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 48px 28px; }
 .service figure { aspect-ratio: 3 / 2; border-radius: 14px; overflow: hidden; background: var(--fond-doux); border: 1px solid var(--trait); }
-.service h3 { font-size: 1.35rem; margin-top: 20px; }
-.service p { margin-top: 8px; font-size: 1rem; }
+.service h3 { font-size: 1.2rem; margin-top: 18px; }
+.service p { margin-top: 8px; font-size: .97rem; }
 .invitation-ligne { margin-top: 48px; color: var(--doux); }
 .invitation-ligne a { color: var(--lien); font-weight: 600; text-underline-offset: 4px; margin-left: 8px; }
 
@@ -225,10 +225,18 @@ details p { padding: 0 44px 24px 0; }
 }
 @media print { .chat { display: none; } }
 
+.engagements { margin-top: 72px; padding-top: 48px; border-top: 1px solid var(--trait); }
+.engagements h3 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); max-width: 26ch; }
+.engagements ul { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 36px; margin-top: 32px; }
+.engagements li { padding-left: 18px; border-left: 3px solid var(--turquoise); }
+.engagements li strong { display: block; font-family: var(--titres); font-size: 1.08rem; color: var(--ink); margin-bottom: 6px; }
+.engagements li span { color: var(--doux); }
+
 /* Adaptatif */
 @media (max-width: 1000px) {
   .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+  .engagements ul { grid-template-columns: 1fr; }
   .etapes li:nth-child(2)::after { display: none; }
 }
 @media (max-width: 860px) {
@@ -256,7 +264,7 @@ details p { padding: 0 44px 24px 0; }
   .chat-bouton span { display: none; }
   .chat-panneau { width: 100%; max-height: calc(100vh - 96px); }
   .chat-saisie input { font-size: 1rem; }
-  .liste, .etapes, .comparaison, .ia-liste { grid-template-columns: 1fr; }
+  .liste, .etapes, .comparaison, .ia-liste, .engagements ul { grid-template-columns: 1fr; }
   .etapes li::after { display: none; }
   .actions .btn { width: 100%; text-align: center; }
   .mosaique { height: 300px; gap: 10px; }
@@ -303,8 +311,8 @@ details p { padding: 0 44px 24px 0; }
   <section class="hero" id="accueil">
     <div class="wrap">
       <div>
-        <h1>Une informatique claire, accessible et intelligente.</h1>
-        <p>Une offre globale, tout-en-un et clé en main : informatique, télécom, sécurité et intelligence artificielle pris en charge de A à Z par MAZ-AVA Technologies, avec un interlocuteur unique.</p>
+        <h1>Une seule équipe d'experts pour tout votre système d'information.</h1>
+        <p>Informatique, bureautique, télécom, cybersécurité, sécurité électronique et intelligence artificielle : MAZ-AVA Technologies prend tout en charge, de l'audit à l'exploitation, avec un interlocuteur unique. Nos experts vous expliquent chaque choix en langage clair.</p>
         <div class="actions">
           <a class="btn btn-plein" href="mailto:contact@maz-ava.fr?subject=Demande%20de%20diagnostic&amp;body=Bonjour%2C%0A%0AEntreprise%20%3A%0ANombre%20de%20sites%20%3A%0AVotre%20besoin%20%3A%0A%0ACordialement">Demander un diagnostic</a>
           <a class="btn btn-ligne" href="#services">Voir nos services</a>
@@ -321,15 +329,15 @@ details p { padding: 0 44px 24px 0; }
 
   <section class="interlocuteur" id="interlocuteur">
     <div class="wrap">
-      <figure><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Un seul contact au centre, relié aux six domaines : supervision, réseau, téléphonie, sécurité, cloud et infrastructure"><rect class="bg1" width="400" height="500"/><circle cx="320" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="450" r="70" fill="#fff" opacity=".45"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="200" y2="85"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="343" y2="167.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="343" y2="332.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="200" y2="415"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="57" y2="332.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="57" y2="167.5"/><circle cx="200" cy="85" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="343" cy="167.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="343" cy="332.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="200" cy="415" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="57" cy="332.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="57" cy="167.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><rect class="nv" x="184" y="71" width="32" height="22" rx="3"/><rect class="nv" x="194" y="95" width="12" height="4"/><rect class="nv" x="188" y="99" width="24" height="3" rx="1.5"/><path class="k-bl" stroke-width="3" d="M343 156L330 178M343 156L356 178M330 178H356"/><circle class="bl" cx="343" cy="156" r="5"/><circle class="bl" cx="330" cy="178" r="5"/><circle class="bl" cx="356" cy="178" r="5"/><rect class="nv" x="331" y="316" width="24" height="34" rx="5"/><rect class="tq" x="335" y="321" width="16" height="18" rx="2"/><path class="nv" d="M200 397l17 6v13c0 11-8 17-17 21-9-4-17-10-17-21v-13z"/><path class="k-wh" stroke-width="3" d="M192 414l6 6 11-12"/><g class="bl"><rect x="39" y="330" width="36" height="15" rx="7.5"/><circle cx="51" cy="330" r="8"/><circle cx="63" cy="326" r="11"/></g><rect class="nv" x="41" y="154" width="32" height="12" rx="3"/><rect class="nv" x="41" y="170" width="32" height="12" rx="3"/><circle class="tq" cx="47" cy="160" r="2"/><circle class="tq" cx="47" cy="176" r="2"/><circle cx="200" cy="250" r="86" fill="#fff" stroke="#19D3C5" stroke-width="6"/><circle class="nv" cx="200" cy="228" r="26"/><path class="nv" d="M146 306C146 272 170 258 200 258C230 258 254 272 254 306Z"/><path class="k-tq" stroke-width="6" d="M168 228a32 32 0 0 1 64 0"/><rect class="tq" x="161" y="222" width="10" height="20" rx="5"/><rect class="tq" x="229" y="222" width="10" height="20" rx="5"/></svg></figure>
+      <figure><svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Un seul contact au centre, relié aux huit domaines : supervision, réseau, téléphonie, sécurité, cloud et infrastructure"><rect class="bg1" width="400" height="500"/><circle cx="320" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="450" r="70" fill="#fff" opacity=".45"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="200" y2="85"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="343" y2="167.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="343" y2="332.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="200" y2="415"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="57" y2="332.5"/><line class="k-gr" stroke-width="4" stroke-dasharray="1 11" x1="200" y1="250" x2="57" y2="167.5"/><circle cx="200" cy="85" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="343" cy="167.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="343" cy="332.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="200" cy="415" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="57" cy="332.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="57" cy="167.5" r="38" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><rect class="nv" x="184" y="71" width="32" height="22" rx="3"/><rect class="nv" x="194" y="95" width="12" height="4"/><rect class="nv" x="188" y="99" width="24" height="3" rx="1.5"/><path class="k-bl" stroke-width="3" d="M343 156L330 178M343 156L356 178M330 178H356"/><circle class="bl" cx="343" cy="156" r="5"/><circle class="bl" cx="330" cy="178" r="5"/><circle class="bl" cx="356" cy="178" r="5"/><rect class="nv" x="331" y="316" width="24" height="34" rx="5"/><rect class="tq" x="335" y="321" width="16" height="18" rx="2"/><path class="nv" d="M200 397l17 6v13c0 11-8 17-17 21-9-4-17-10-17-21v-13z"/><path class="k-wh" stroke-width="3" d="M192 414l6 6 11-12"/><g class="bl"><rect x="39" y="330" width="36" height="15" rx="7.5"/><circle cx="51" cy="330" r="8"/><circle cx="63" cy="326" r="11"/></g><rect class="nv" x="41" y="154" width="32" height="12" rx="3"/><rect class="nv" x="41" y="170" width="32" height="12" rx="3"/><circle class="tq" cx="47" cy="160" r="2"/><circle class="tq" cx="47" cy="176" r="2"/><circle cx="200" cy="250" r="86" fill="#fff" stroke="#19D3C5" stroke-width="6"/><circle class="nv" cx="200" cy="228" r="26"/><path class="nv" d="M146 306C146 272 170 258 200 258C230 258 254 272 254 306Z"/><path class="k-tq" stroke-width="6" d="M168 228a32 32 0 0 1 64 0"/><rect class="tq" x="161" y="222" width="10" height="20" rx="5"/><rect class="tq" x="229" y="222" width="10" height="20" rx="5"/></svg></figure>
       <div>
         <h2>Une offre à 360°, un interlocuteur unique</h2>
-        <p style="margin-top:16px">Réseau, téléphonie, sécurité, cloud, intelligence artificielle, postes de travail : nous couvrons l'ensemble de votre informatique et de votre télécom, de l'audit à l'exploitation. Vous n'avez qu'un seul contact, et le projet est livré clé en main.</p>
+        <p style="margin-top:16px">Réseau, téléphonie, bureautique, cybersécurité, sécurité électronique, cloud, intelligence artificielle : nous couvrons l'ensemble de votre informatique, de votre télécom et de votre sécurité, de l'audit à l'exploitation. Vous n'avez qu'un seul contact, et le projet est livré clé en main.</p>
         <div class="comparaison">
           <div class="avant">
             <h3>Souvent aujourd'hui</h3>
             <ul>
-              <li>Un prestataire par domaine : réseau, téléphonie, sécurité, postes.</li>
+              <li>Un prestataire par domaine : réseau, téléphonie, postes, sécurité, alarme et vidéosurveillance.</li>
               <li>En cas de panne, chacun renvoie la responsabilité vers l'autre.</li>
               <li>Autant de contrats, de factures et de contacts à suivre.</li>
             </ul>
@@ -351,7 +359,7 @@ details p { padding: 0 44px 24px 0; }
     <div class="wrap">
       <div class="entete">
         <h2>Ce que nous prenons en charge</h2>
-        <p>Tous les métiers de l'IT réunis dans une seule offre, du poste de travail à la ligne opérateur.</p>
+        <p>Tous les métiers réunis dans une seule offre, du poste de travail à la caméra, de la ligne opérateur au serveur.</p>
       </div>
 
       <div class="liste">
@@ -359,6 +367,11 @@ details p { padding: 0 44px 24px 0; }
           <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Écran de supervision avec tâches validées, roue dentée et bulle de dialogue"><rect class="bg1" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><rect class="nv" x="150" y="70" width="300" height="210" rx="18"/><rect class="wh" x="166" y="86" width="268" height="178" rx="8"/><rect class="nv" x="270" y="280" width="60" height="26"/><rect class="nv" x="230" y="304" width="140" height="14" rx="7"/><rect class="lb" x="182" y="100" width="100" height="12" rx="6"/><circle class="tq" cx="198" cy="140" r="11"/><path class="k-wh" stroke-width="3.5" d="M192 140l5 5 9-10"/><rect class="lb" x="220" y="134" width="130" height="12" rx="6"/><rect class="lt" x="362" y="134" width="54" height="12" rx="6"/><circle class="tq" cx="198" cy="178" r="11"/><path class="k-wh" stroke-width="3.5" d="M192 178l5 5 9-10"/><rect class="lb" x="220" y="172" width="130" height="12" rx="6"/><rect class="lt" x="362" y="172" width="54" height="12" rx="6"/><circle class="tq" cx="198" cy="216" r="11"/><path class="k-wh" stroke-width="3.5" d="M192 216l5 5 9-10"/><rect class="lb" x="220" y="210" width="130" height="12" rx="6"/><rect class="lt" x="362" y="210" width="54" height="12" rx="6"/><g transform="translate(494 276)"><g class="bl"><rect x="-8" y="-44" width="16" height="88" rx="4"/><rect x="-8" y="-44" width="16" height="88" rx="4" transform="rotate(45)"/><rect x="-8" y="-44" width="16" height="88" rx="4" transform="rotate(90)"/><rect x="-8" y="-44" width="16" height="88" rx="4" transform="rotate(135)"/><circle r="31"/></g><circle class="bg1" r="12"/></g><rect class="tq" x="398" y="38" width="124" height="66" rx="20"/><polygon class="tq" points="428,100 452,100 430,124"/><circle class="wh" cx="432" cy="71" r="6"/><circle class="wh" cx="460" cy="71" r="6"/><circle class="wh" cx="488" cy="71" r="6"/></svg></figure>
           <h3>Infogérance et maintenance</h3>
           <p>Supervision, support aux utilisateurs et maintenance du parc, avec un interlocuteur technique identifié.</p>
+        </article>
+        <article class="service">
+          <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Poste de travail avec écran, ordinateur portable et imprimante"><rect class="bg2" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><rect class="gr" x="60" y="332" width="480" height="10" rx="5"/><rect class="nv" x="170" y="66" width="230" height="160" rx="14"/><rect class="lb" x="184" y="80" width="202" height="130" rx="6"/><rect class="bl" x="196" y="94" width="86" height="12" rx="6"/><rect class="tq" x="196" y="118" width="130" height="10" rx="5"/><rect class="gr" x="196" y="140" width="160" height="10" rx="5"/><rect class="gr" x="196" y="162" width="110" height="10" rx="5"/><rect class="nv" x="272" y="226" width="26" height="46" rx="4"/><rect class="nv" x="240" y="268" width="90" height="12" rx="6"/><rect class="nv" x="62" y="262" width="110" height="70" rx="8"/><rect class="wh" x="74" y="274" width="86" height="42" rx="4"/><rect class="bl" x="86" y="284" width="40" height="8" rx="4"/><rect class="nv2" x="48" y="330" width="138" height="12" rx="6"/><rect class="nv" x="396" y="252" width="130" height="80" rx="12"/><rect class="wh" x="414" y="226" width="94" height="34" rx="4"/><rect class="lb" x="418" y="292" width="86" height="40" rx="4"/><circle class="tq" cx="506" cy="272" r="6"/></svg></figure>
+          <h3>Bureautique et postes de travail</h3>
+          <p>Ordinateurs, imprimantes et copieurs, messagerie et outils collaboratifs : fourniture, installation et support au quotidien.</p>
         </article>
         <article class="service">
           <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Réseau d'entreprise : un commutateur relié à un ordinateur, un bâtiment, un téléphone et un serveur"><rect class="bg2" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><line class="k-gr" stroke-width="5" stroke-dasharray="1 12" x1="300" y1="200" x2="110" y2="90"/><line class="k-gr" stroke-width="5" stroke-dasharray="1 12" x1="300" y1="200" x2="490" y2="90"/><line class="k-gr" stroke-width="5" stroke-dasharray="1 12" x1="300" y1="200" x2="110" y2="310"/><line class="k-gr" stroke-width="5" stroke-dasharray="1 12" x1="300" y1="200" x2="490" y2="310"/><rect class="nv" x="235" y="165" width="130" height="76" rx="16"/><rect class="tq" x="249" y="208" width="20" height="18" rx="4"/><rect class="tq" x="275" y="208" width="20" height="18" rx="4"/><rect class="tq" x="301" y="208" width="20" height="18" rx="4"/><rect class="tq" x="327" y="208" width="20" height="18" rx="4"/><circle class="am" cx="259" cy="187" r="5"/><circle class="tq" cx="285" cy="187" r="5"/><circle class="tq" cx="311" cy="187" r="5"/><path class="k-tq" stroke-width="6" opacity="0.95" d="M284.4 134.4A22 22 0 0 1 315.6 134.4"/><path class="k-tq" stroke-width="6" opacity="0.7" d="M271.7 121.7A40 40 0 0 1 328.3 121.7"/><path class="k-tq" stroke-width="6" opacity="0.45" d="M259.0 109.0A58 58 0 0 1 341.0 109.0"/><circle class="bl" cx="300" cy="150" r="7"/><circle cx="110" cy="90" r="44" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="490" cy="90" r="44" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="110" cy="310" r="44" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><circle cx="490" cy="310" r="44" fill="#fff" stroke="#DCE8FF" stroke-width="5"/><rect class="nv" x="88" y="74" width="44" height="29" rx="4"/><rect class="nv" x="80" y="106" width="60" height="7" rx="3.5"/><rect class="nv" x="474" y="66" width="32" height="46" rx="4"/><rect class="wh" x="480" y="73" width="7" height="7"/><rect class="wh" x="480" y="86" width="7" height="7"/><rect class="wh" x="480" y="99" width="7" height="7"/><rect class="wh" x="493" y="73" width="7" height="7"/><rect class="wh" x="493" y="86" width="7" height="7"/><rect class="wh" x="493" y="99" width="7" height="7"/><rect class="nv" x="97" y="290" width="26" height="42" rx="6"/><rect class="tq" x="102" y="297" width="16" height="22" rx="2"/><rect class="nv" x="470" y="292" width="40" height="15" rx="3"/><rect class="nv" x="470" y="311" width="40" height="15" rx="3"/><circle class="tq" cx="478" cy="299.5" r="2.5"/><circle class="tq" cx="478" cy="318.5" r="2.5"/></svg></figure>
@@ -379,6 +392,11 @@ details p { padding: 0 44px 24px 0; }
           <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bouclier de protection avec coche de validation et cadenas"><rect class="bg1" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><path class="nv" d="M300 56L412 98V196C412 266 366 318 300 344C234 318 188 266 188 196V98Z"/><path class="bl" d="M300 84L388 116V196C388 252 354 292 300 316C246 292 212 252 212 196V116Z"/><path class="k-wh" stroke-width="16" d="M254 196L288 230L348 160"/><path class="k-gr" stroke-width="5" d="M412 150H470V108"/><circle class="tq" cx="470" cy="104" r="9"/><path class="k-gr" stroke-width="5" d="M412 240H504V286"/><circle class="am" cx="504" cy="292" r="9"/><path class="k-gr" stroke-width="5" d="M188 270H120V316"/><circle class="tq" cx="120" cy="322" r="9"/><rect class="wh" x="82" y="162" width="72" height="58" rx="12"/><path class="k-nv" stroke-width="8" d="M97 162v-18a21 21 0 0 1 42 0v18"/><circle class="nv" cx="118" cy="188" r="7"/><rect class="nv" x="115" y="190" width="6" height="16" rx="3"/></svg></figure>
           <h3>Cybersécurité</h3>
           <p>Audits, protection des postes, pare-feu, chiffrement et sauvegardes, pour réduire les risques et savoir ce qui est en place.</p>
+        </article>
+        <article class="service">
+          <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Caméra de vidéosurveillance et lecteur de badge pour le contrôle d'accès"><rect class="bg1" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><rect class="nv" x="70" y="60" width="140" height="18" rx="9"/><rect class="nv2" x="190" y="68" width="14" height="60" rx="6"/><g transform="rotate(14 330 130)"><rect class="nv" x="210" y="96" width="210" height="84" rx="22"/><rect class="nv2" x="400" y="108" width="52" height="60" rx="10"/><circle class="lb" cx="288" cy="138" r="30"/><circle class="bl" cx="288" cy="138" r="18"/><circle class="wh" cx="282" cy="132" r="5"/><circle class="am" cx="378" cy="118" r="5"/></g><path class="k-tq" fill="none" stroke-width="5" stroke-linecap="round" d="M470 170Q500 200 470 230M492 160Q536 200 492 240"/><rect class="nv" x="110" y="238" width="120" height="116" rx="18"/><rect class="lb" x="128" y="256" width="84" height="40" rx="8"/><circle class="tq" cx="170" cy="276" r="10"/><rect class="wh" x="140" y="312" width="60" height="26" rx="6"/><rect class="bl" x="150" y="320" width="40" height="10" rx="5"/><rect class="wh" x="330" y="262" width="120" height="76" rx="10"/><rect class="bl" x="344" y="276" width="46" height="48" rx="6"/><circle class="wh" cx="367" cy="292" r="7"/><rect class="wh" x="353" y="302" width="28" height="14" rx="7"/><rect class="tq" x="402" y="278" width="34" height="8" rx="4"/><rect class="gr" x="402" y="298" width="34" height="8" rx="4"/></svg></figure>
+          <h3>Sécurité électronique</h3>
+          <p>Vidéosurveillance, contrôle d'accès, alarme anti-intrusion et interphonie : études, installation et maintenance sur vos sites.</p>
         </article>
         <article class="service">
           <figure><svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Deux baies de serveurs reliées par des câbles"><rect class="bg2" width="600" height="400"/><circle cx="520" cy="60" r="100" fill="#fff" opacity=".55"/><circle cx="60" cy="350" r="70" fill="#fff" opacity=".45"/><rect class="gr" x="70" y="330" width="460" height="10" rx="5"/><rect class="nv" x="130" y="60" width="150" height="270" rx="14"/><rect class="nv2" x="144" y="76" width="122" height="38" rx="8"/><circle class="tq" cx="160" cy="95" r="5"/><rect fill="#3A4F80" x="176" y="90" width="70" height="10" rx="5"/><rect class="nv2" x="144" y="126" width="122" height="38" rx="8"/><circle class="tq" cx="160" cy="145" r="5"/><rect fill="#3A4F80" x="176" y="140" width="70" height="10" rx="5"/><rect class="nv2" x="144" y="176" width="122" height="38" rx="8"/><circle class="tq" cx="160" cy="195" r="5"/><rect fill="#3A4F80" x="176" y="190" width="70" height="10" rx="5"/><rect class="nv2" x="144" y="226" width="122" height="38" rx="8"/><circle class="am" cx="160" cy="245" r="5"/><rect fill="#3A4F80" x="176" y="240" width="70" height="10" rx="5"/><rect class="nv2" x="144" y="276" width="122" height="38" rx="8"/><circle class="tq" cx="160" cy="295" r="5"/><rect fill="#3A4F80" x="176" y="290" width="70" height="10" rx="5"/><rect class="nv" x="320" y="90" width="150" height="240" rx="14"/><rect class="nv2" x="334" y="106" width="122" height="38" rx="8"/><circle class="tq" cx="350" cy="125" r="5"/><rect fill="#3A4F80" x="366" y="120" width="70" height="10" rx="5"/><rect class="nv2" x="334" y="156" width="122" height="38" rx="8"/><circle class="tq" cx="350" cy="175" r="5"/><rect fill="#3A4F80" x="366" y="170" width="70" height="10" rx="5"/><rect class="nv2" x="334" y="206" width="122" height="38" rx="8"/><circle class="tq" cx="350" cy="225" r="5"/><rect fill="#3A4F80" x="366" y="220" width="70" height="10" rx="5"/><rect class="nv2" x="334" y="256" width="122" height="38" rx="8"/><circle class="am" cx="350" cy="275" r="5"/><rect fill="#3A4F80" x="366" y="270" width="70" height="10" rx="5"/><path class="k-tq" stroke-width="6" d="M280 150C305 150 295 180 320 180"/><path class="k-bl" stroke-width="6" d="M280 200C305 200 295 230 320 230"/><path class="k-am" stroke-width="6" d="M280 250C305 250 295 280 320 280"/><circle cx="520" cy="110" r="36" fill="#fff"/><polygon class="am" points="526,88 504,118 518,118 512,142 538,106 523,106"/></svg></figure>
@@ -442,6 +460,14 @@ details p { padding: 0 44px 24px 0; }
           <p>Supervision, comptes rendus réguliers et points d'amélioration dans la durée.</p>
         </li>
       </ol>
+      <div class="engagements">
+        <h3>Des experts, et un langage que chacun comprend</h3>
+        <ul>
+          <li><strong>Un constat écrit</strong><span>Chaque audit donne lieu à un état des lieux documenté : ce qui est en place, ce qui présente un risque, ce qui est prioritaire.</span></li>
+          <li><strong>Des mots simples</strong><span>Nous expliquons les termes techniques et les choix possibles, pour que vous décidiez en connaissance de cause.</span></li>
+          <li><strong>Un seul responsable</strong><span>Un interlocuteur identifié suit votre dossier du premier échange à l'exploitation, tous domaines confondus.</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -508,16 +534,18 @@ details p { padding: 0 44px 24px 0; }
           <svg aria-hidden="true"><use href="#marque"/></svg>
           <span class="brand-name">MAZ-AVA<small>Technologies</small></span>
         </a>
-        <p>L'informatique et le télécom des entreprises, rendus clairs, accessibles et intelligents.</p>
+        <p>Des experts IT, télécom et sécurité, pour des entreprises qui veulent des réponses claires.</p>
       </div>
       <div>
         <h3>Services</h3>
         <ul>
           <li><a href="#services">Infogérance et maintenance</a></li>
+          <li><a href="#services">Bureautique et postes</a></li>
           <li><a href="#services">Réseaux</a></li>
           <li><a href="#services">Téléphonie opérateur</a></li>
           <li><a href="#services">Cloud</a></li>
           <li><a href="#services">Cybersécurité</a></li>
+          <li><a href="#services">Sécurité électronique</a></li>
           <li><a href="#services">Infrastructure</a></li>
           <li><a href="#ia">Intelligence artificielle</a></li>
         </ul>
@@ -584,12 +612,14 @@ details p { padding: 0 44px 24px 0; }
   var initialise = false;
 
   var SUJETS = {
-    services: { libelle: 'Nos services', texte: "Nous couvrons six domaines : infogérance et maintenance, réseaux, téléphonie opérateur, cloud, cybersécurité et infrastructure. Nous proposons aussi des services d'intelligence artificielle.", lien: ['#services', 'Voir les services'] },
+    services: { libelle: 'Nos services', texte: "Nous couvrons huit domaines : infogérance et maintenance, bureautique et postes de travail, réseaux, téléphonie opérateur, cloud, cybersécurité, sécurité électronique et infrastructure. Nous proposons aussi des services d'intelligence artificielle.", lien: ['#services', 'Voir les services'] },
     infogerance: { libelle: 'Infogérance', texte: "Supervision, support aux utilisateurs et maintenance du parc, avec un interlocuteur technique identifié.", lien: ['#services', 'Voir les services'] },
     reseaux: { libelle: 'Réseaux', texte: "Conception, déploiement et sécurisation des réseaux locaux, du Wi-Fi et des liaisons entre sites.", lien: ['#services', 'Voir les services'] },
     telephonie: { libelle: 'Téléphonie opérateur', texte: "Nous gérons la voix de l'entreprise de bout en bout : opérateurs, trunks SIP, portabilité des numéros et migration vers 3CX.", lien: ['#services', 'Voir les services'] },
     cloud: { libelle: 'Cloud', texte: "Migration et exploitation de Microsoft 365 et des environnements cloud, sauvegardes comprises.", lien: ['#services', 'Voir les services'] },
     securite: { libelle: 'Cybersécurité', texte: "Audits, protection des postes, pare-feu, chiffrement et sauvegardes, pour réduire les risques et savoir ce qui est en place.", lien: ['#services', 'Voir les services'] },
+    bureautique: { libelle: 'Bureautique', texte: "Ordinateurs, imprimantes et copieurs, messagerie et outils collaboratifs : fourniture, installation et support au quotidien.", lien: ['#services', 'Voir les services'] },
+    securitee: { libelle: 'Sécurité électronique', texte: "Vidéosurveillance, contrôle d'accès, alarme anti-intrusion et interphonie : études, installation et maintenance sur vos sites.", lien: ['#services', 'Voir les services'] },
     infra: { libelle: 'Infrastructure', texte: "Serveurs, virtualisation et locaux techniques : architecture, mise en place et modernisation.", lien: ['#services', 'Voir les services'] },
     ia: { libelle: 'Intelligence artificielle', texte: "Nous proposons des agents téléphoniques IA, la transcription des appels (STT), la synthèse vocale (TTS) et des audits IA pour les entreprises.", lien: ['#ia', "Voir l'offre IA"] },
     methode: { libelle: 'Comment ça se passe ?', texte: "Quatre étapes : audit de l'existant, plan d'action avec devis détaillé, mise en œuvre selon un planning validé avec vous, puis suivi dans la durée.", lien: ['#methode', 'Voir la méthode'] },
@@ -600,6 +630,8 @@ details p { padding: 0 44px 24px 0; }
   var MOTS = [
     ['ia', /\bia\b|intelligence|agent|transcri|\bstt\b|\btts\b|vocal|voix|chatbot/],
     ['telephonie', /telephon|3cx|\bsip\b|operateur|portabilit|numero|standard/],
+    ['securitee', /videosurveillance|camera|alarme|intrusion|controle d'acces|badge|interphone|securite electronique/],
+    ['bureautique', /bureautique|poste|ordinateur|imprimante|copieur|messagerie|outlook/],
     ['securite', /securite|cyber|pare-feu|antivirus|chiffrement|audit/],
     ['reseaux', /reseau|wi-?fi|\blan\b|\bvpn\b/],
     ['cloud', /cloud|microsoft|365|azure|sauvegarde/],
