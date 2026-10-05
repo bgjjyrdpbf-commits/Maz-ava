@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MAZ-AVA Technologies | IT et télécom pour les entreprises</title>
+<meta name="description" content="MAZ-AVA Technologies accompagne les entreprises en infogérance, réseaux, cloud, cybersécurité, téléphonie opérateur et infrastructure.">
+<meta name="theme-color" content="#0A1530">
+<link rel="icon" type="image/svg+xml" href="logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nuit: #0A1530;
+  --encre: #0F1E42;
+  --trait: #22345F;
+  --texte: #F2F6FF;
+  --doux: #A9B8D6;
+  --bleu: #2F6BFF;
+  --turquoise: #19D3C5;
+  --degrade: linear-gradient(120deg, var(--bleu), var(--turquoise));
+  --titres: "Familjen Grotesk", "Segoe UI", system-ui, sans-serif;
+  --texte-police: "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { color-scheme: dark; scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  background: var(--nuit);
+  color: var(--texte);
+  font-family: var(--texte-police);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
+h1, h2, h3 { font-family: var(--titres); font-weight: 600; letter-spacing: -0.015em; line-height: 1.12; }
+p { color: var(--doux); max-width: 58ch; }
+section { padding: clamp(64px, 9vw, 116px) 0; }
+
+/* En-tête */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10, 21, 48, 0.88);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--trait);
+}
+.bar { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.brand svg { width: 34px; height: 34px; }
+.brand-name { font-family: var(--titres); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.02em; line-height: 1; }
+.brand-name small { display: block; font-family: var(--texte-police); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--doux); margin-top: 4px; }
+.nav { display: flex; align-items: center; gap: 32px; }
+.nav a { text-decoration: none; color: var(--doux); font-weight: 500; font-size: 0.97rem; transition: color .15s; }
+.nav a:hover { color: var(--texte); }
+.nav .nav-contact { color: var(--nuit); background: var(--turquoise); padding: 9px 18px; border-radius: 999px; font-weight: 600; }
+.nav .nav-contact:hover { color: var(--nuit); background: #5FE6DA; }
+.burger { display: none; background: none; border: 1px solid var(--trait); color: var(--texte); width: 44px; height: 44px; border-radius: 10px; cursor: pointer; }
+.burger span, .burger span::before, .burger span::after { display: block; width: 18px; height: 2px; background: currentColor; margin: auto; position: relative; transition: transform .2s, background .2s; }
+.burger span::before, .burger span::after { content: ""; position: absolute; left: 0; }
+.burger span::before { top: -6px; }
+.burger span::after { top: 6px; }
+.burger[aria-expanded="true"] span { background: transparent; }
+.burger[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
+.burger[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
+
+/* Accueil */
+.hero { padding-top: clamp(48px, 8vw, 96px); padding-bottom: clamp(24px, 4vw, 48px); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.5rem); font-weight: 600; line-height: 1.03; letter-spacing: -0.025em; }
+.hero p { font-size: 1.15rem; margin-top: 26px; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 999px; transition: background .15s, border-color .15s; }
+.btn-plein { background: var(--turquoise); color: var(--nuit); }
+.btn-plein:hover { background: #5FE6DA; }
+.btn-ligne { border: 1px solid var(--trait); color: var(--texte); }
+.btn-ligne:hover { border-color: var(--doux); }
+.portail { width: 100%; max-width: 420px; justify-self: center; height: auto; }
+.portail .trait { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+.portail .point { transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: no-preference) {
+  .portail .trait { stroke-dashoffset: 1; animation: tracer 1.1s cubic-bezier(.5, 0, .2, 1) forwards; }
+  .portail .t2 { animation-delay: .25s; }
+  .portail .t3 { animation-delay: .45s; }
+  .portail .t4 { animation-delay: .6s; }
+  .portail .t5 { animation-delay: .8s; }
+  .portail .point { opacity: 0; transform: scale(.2); animation: allumer .6s 1.5s ease-out forwards; }
+  @keyframes tracer { to { stroke-dashoffset: 0; } }
+  @keyframes allumer { to { opacity: 1; transform: scale(1); } }
+}
+
+/* Services */
+.entete { margin-bottom: 48px; }
+.entete h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); max-width: 20ch; }
+.entete p { margin-top: 16px; }
+.vedette {
+  position: relative;
+  background: var(--encre);
+  border: 1px solid var(--trait);
+  border-radius: 16px;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 52px) clamp(28px, 4vw, 48px) clamp(30px, 4vw, 56px);
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 36px 56px;
+  overflow: hidden;
+}
+.vedette::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--degrade); }
+.vedette h3 { font-size: clamp(1.6rem, 2.8vw, 2.2rem); }
+.vedette p { margin-top: 14px; }
+.vedette ul { list-style: none; align-self: center; }
+.vedette li { padding: 13px 0; border-top: 1px solid var(--trait); color: var(--texte); font-weight: 500; }
+.vedette li:last-child { border-bottom: 1px solid var(--trait); }
+.vedette li span { display: block; color: var(--doux); font-weight: 400; font-size: 0.95rem; }
+.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; margin-top: 48px; }
+.liste > div { border-top: 1px solid var(--trait); padding: 28px 0 36px; }
+.liste h3 { font-size: 1.35rem; }
+.liste p { margin-top: 10px; font-size: 1rem; }
+.liste .invitation { display: flex; flex-direction: column; justify-content: center; }
+.liste .invitation a { margin-top: 12px; font-weight: 600; color: var(--turquoise); text-underline-offset: 4px; }
+
+/* Pourquoi */
+.pourquoi { background: var(--encre); border-block: 1px solid var(--trait); }
+.piliers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
+.piliers div { position: relative; padding-top: 22px; }
+.piliers div::before { content: ""; position: absolute; top: 0; left: 0; width: 44px; height: 3px; background: var(--degrade); border-radius: 2px; }
+.piliers h3 { font-size: 1.3rem; }
+.piliers p { margin-top: 10px; font-size: 1rem; }
+
+/* Appel à l'action */
+.appel { text-align: left; }
+.appel .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px; }
+.appel h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18ch; }
+.appel p { margin-top: 12px; }
+
+/* Pied de page */
+.site-footer { border-top: 1px solid var(--trait); padding: 52px 0 36px; }
+.pied { display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 1fr)); gap: 40px; }
+.pied h3 { font-size: 1rem; margin-bottom: 14px; }
+.pied ul { list-style: none; }
+.pied li { margin-bottom: 8px; }
+.pied a { color: var(--doux); text-decoration: none; }
+.pied a:hover { color: var(--texte); }
+.pied .brand { margin-bottom: 14px; }
+.pied p { font-size: 0.97rem; }
+.copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--trait); color: var(--doux); font-size: 0.9rem; max-width: none; }
+
+/* Adaptatif */
+@media (max-width: 1000px) {
+  .piliers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .burger { display: block; }
+  .nav {
+    display: none; position: absolute; top: 68px; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--nuit); border-bottom: 1px solid var(--trait); padding: 8px 20px 20px;
+  }
+  .nav.ouvert { display: flex; }
+  .nav a { padding: 14px 0; border-bottom: 1px solid var(--trait); }
+  .nav .nav-contact { margin-top: 16px; text-align: center; border-bottom: 0; padding: 13px 18px; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
+  .portail { max-width: 280px; justify-self: start; }
+  .vedette { grid-template-columns: 1fr; }
+  .pied { grid-template-columns: 1fr 1fr; }
+  .pied > :first-child { grid-column: 1 / -1; }
+}
+@media (max-width: 600px) {
+  .liste, .piliers { grid-template-columns: 1fr; }
+  .liste { gap: 0; }
+  .actions .btn { width: 100%; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gm" gradientUnits="userSpaceOnUse" x1="8" y1="8" x2="56" y2="56">
+      <stop offset="0" stop-color="#2F6BFF"/>
+      <stop offset="1" stop-color="#19D3C5"/>
+    </linearGradient>
+    <symbol id="marque" viewBox="0 0 64 64">
+      <g fill="none" stroke="url(#gm)" stroke-width="6" stroke-linecap="round">
+        <line x1="14" y1="12" x2="14" y2="52"/>
+        <line x1="50" y1="12" x2="50" y2="52"/>
+        <line x1="32" y1="36" x2="32" y2="52"/>
+      </g>
+      <circle cx="32" cy="21" r="5" fill="url(#gm)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#accueil" aria-label="MAZ-AVA Technologies, accueil">
+      <svg aria-hidden="true"><use href="#marque"/></svg>
+      <span class="brand-name">MAZ-AVA<small>Technologies</small></span>
+    </a>
+    <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+    <nav class="nav" id="menu" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#pourquoi">Pourquoi MAZ-AVA</a>
+      <a class="nav-contact" href="#contact">Nous contacter</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="accueil">
+    <div class="wrap">
+      <div>
+        <h1>Une informatique claire, accessible et intelligente.</h1>
+        <p>MAZ-AVA Technologies accompagne les entreprises en infogérance, réseaux, cloud, cybersécurité, téléphonie opérateur et infrastructure, avec un seul interlocuteur.</p>
+        <div class="actions">
+          <a class="btn btn-plein" href="mailto:contact@maz-ava.fr">Nous écrire</a>
+          <a class="btn btn-ligne" href="#services">Voir nos services</a>
+        </div>
+      </div>
+      <svg class="portail" viewBox="0 0 400 480" role="img" aria-label="Un portail dont les lignes convergent vers un point lumineux">
+        <defs>
+          <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="40" y1="30" x2="360" y2="450">
+            <stop offset="0" stop-color="#2F6BFF"/>
+            <stop offset="1" stop-color="#19D3C5"/>
+          </linearGradient>
+          <radialGradient id="lueur" cx="50%" cy="50%" r="50%">
+            <stop offset="0" stop-color="#19D3C5" stop-opacity=".55"/>
+            <stop offset="1" stop-color="#19D3C5" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <g stroke="url(#gp)">
+          <g opacity=".16"><path class="trait t5" pathLength="1" stroke-width="3" d="M165 185V440"/><path class="trait t5" pathLength="1" stroke-width="3" d="M235 185V440"/></g>
+          <g opacity=".3"><path class="trait t4" pathLength="1" stroke-width="4" d="M135 140V440"/><path class="trait t4" pathLength="1" stroke-width="4" d="M265 140V440"/></g>
+          <g opacity=".5"><path class="trait t3" pathLength="1" stroke-width="6" d="M95 90V440"/><path class="trait t3" pathLength="1" stroke-width="6" d="M305 90V440"/></g>
+          <path class="trait t1" pathLength="1" stroke-width="10" d="M50 40V440"/>
+          <path class="trait t1" pathLength="1" stroke-width="10" d="M350 40V440"/>
+          <path class="trait t2" pathLength="1" stroke-width="10" d="M200 262V440"/>
+        </g>
+        <circle class="point" cx="200" cy="215" r="60" fill="url(#lueur)"/>
+        <circle class="point" cx="200" cy="215" r="15" fill="url(#gp)"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="entete">
+        <h2>Ce que nous prenons en charge</h2>
+        <p>Du poste de travail à la ligne opérateur, nous couvrons l'ensemble du système d'information et de la téléphonie de l'entreprise.</p>
+      </div>
+
+      <article class="vedette">
+        <div>
+          <h3>Téléphonie opérateur</h3>
+          <p>Nous gérons la voix de l'entreprise de bout en bout : choix et suivi des opérateurs, trunks SIP, portabilité des numéros et migration de la téléphonie vers 3CX.</p>
+        </div>
+        <ul>
+          <li>Trunks SIP et lignes opérateur<span>Raccordement, suivi et résolution des incidents</span></li>
+          <li>Portabilité des numéros<span>Préparation, bascule et vérification</span></li>
+          <li>Migration vers 3CX<span>Du cadrage à la mise en service</span></li>
+        </ul>
+      </article>
+
+      <div class="liste">
+        <div>
+          <h3>Infogérance et maintenance</h3>
+          <p>Supervision, support aux utilisateurs et maintenance du parc, avec un interlocuteur technique identifié.</p>
+        </div>
+        <div>
+          <h3>Réseaux</h3>
+          <p>Conception, déploiement et sécurisation des réseaux locaux, du Wi-Fi et des liaisons entre sites.</p>
+        </div>
+        <div>
+          <h3>Cloud</h3>
+          <p>Migration et exploitation de Microsoft 365 et des environnements cloud, sauvegardes comprises.</p>
+        </div>
+        <div>
+          <h3>Cybersécurité</h3>
+          <p>Audits, protection des postes, pare-feu, chiffrement et sauvegardes, pour réduire les risques et savoir ce qui est en place.</p>
+        </div>
+        <div>
+          <h3>Infrastructure</h3>
+          <p>Serveurs, virtualisation et locaux techniques : architecture, mise en place et modernisation.</p>
+        </div>
+        <div class="invitation">
+          <h3>Un besoin à cheval sur plusieurs domaines ?</h3>
+          <a href="mailto:contact@maz-ava.fr">Décrivez-le nous</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pourquoi" id="pourquoi">
+    <div class="wrap">
+      <div class="entete">
+        <h2>Pourquoi MAZ-AVA</h2>
+      </div>
+      <div class="piliers">
+        <div>
+          <h3>Clarté et simplicité</h3>
+          <p>Des offres lisibles, des devis détaillés et des comptes rendus sans jargon. Un seul interlocuteur pour l'informatique et le télécom.</p>
+        </div>
+        <div>
+          <h3>Confiance</h3>
+          <p>Des engagements écrits et un suivi régulier de ce qui est installé, décidé et à venir.</p>
+        </div>
+        <div>
+          <h3>Innovation</h3>
+          <p>Des outils de supervision et d'automatisation choisis pour faire gagner du temps aux équipes.</p>
+        </div>
+        <div>
+          <h3>Maîtrise technique</h3>
+          <p>Une expertise de terrain, des postes de travail jusqu'aux opérateurs télécom.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="appel" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Un projet, un incident, une question ?</h2>
+        <p>Écrivez-nous en quelques lignes, nous reviendrons vers vous avec un plan d'action.</p>
+      </div>
+      <a class="btn btn-plein" href="mailto:contact@maz-ava.fr">Écrire à contact@maz-ava.fr</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="pied">
+      <div>
+        <a class="brand" href="#accueil" aria-label="MAZ-AVA Technologies, accueil">
+          <svg aria-hidden="true"><use href="#marque"/></svg>
+          <span class="brand-name">MAZ-AVA<small>Technologies</small></span>
+        </a>
+        <p>L'informatique et le télécom des entreprises, rendus clairs, accessibles et intelligents.</p>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li><a href="#services">Téléphonie opérateur</a></li>
+          <li><a href="#services">Infogérance et maintenance</a></li>
+          <li><a href="#services">Réseaux</a></li>
+          <li><a href="#services">Cloud</a></li>
+          <li><a href="#services">Cybersécurité</a></li>
+          <li><a href="#services">Infrastructure</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:contact@maz-ava.fr">contact@maz-ava.fr</a></li>
+          <li><a href="#pourquoi">Pourquoi MAZ-AVA</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2026 MAZ-AVA Technologies. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var bouton = document.querySelector('.burger');
+  var menu = document.getElementById('menu');
+  function fermer() {
+    menu.classList.remove('ouvert');
+    bouton.setAttribute('aria-expanded', 'false');
+    bouton.setAttribute('aria-label', 'Ouvrir le menu');
+  }
+  bouton.addEventListener('click', function () {
+    var ouvert = menu.classList.toggle('ouvert');
+    bouton.setAttribute('aria-expanded', String(ouvert));
+    bouton.setAttribute('aria-label', ouvert ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
+  menu.addEventListener('click', function (e) { if (e.target.tagName === 'A') fermer(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(); });
+})();
+</script>
+</body>
+</html>
