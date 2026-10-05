@@ -4,11 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MAZ-AVA Technologies | IT et télécom pour les entreprises</title>
-<meta name="description" content="MAZ-AVA Technologies accompagne les entreprises en infogérance, réseaux, cloud, cybersécurité, téléphonie opérateur et infrastructure.">
+<meta name="description" content="MAZ-AVA Technologies prend en charge tous les métiers de l'IT : infogérance, réseaux, téléphonie opérateur, cloud, cybersécurité et infrastructure, avec un seul interlocuteur.">
 <meta name="theme-color" content="#0A1530">
 <link rel="icon" type="image/svg+xml" href="logo-mark.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -34,11 +35,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; }
+img { display: block; max-width: 100%; }
 :focus-visible { outline: 2px solid var(--turquoise); outline-offset: 3px; border-radius: 4px; }
 .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
 h1, h2, h3 { font-family: var(--titres); font-weight: 600; letter-spacing: -0.015em; line-height: 1.12; }
 p { color: var(--doux); max-width: 58ch; }
 section { padding: clamp(64px, 9vw, 116px) 0; }
+.entete { margin-bottom: 48px; }
+.entete h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); max-width: 22ch; }
+.entete p { margin-top: 16px; }
 
 /* En-tête */
 .site-header {
@@ -52,7 +57,7 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .brand svg { width: 34px; height: 34px; }
 .brand-name { font-family: var(--titres); font-weight: 700; font-size: 1.2rem; letter-spacing: 0.02em; line-height: 1; }
 .brand-name small { display: block; font-family: var(--texte-police); font-weight: 500; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--doux); margin-top: 4px; }
-.nav { display: flex; align-items: center; gap: 32px; }
+.nav { display: flex; align-items: center; gap: 30px; }
 .nav a { text-decoration: none; color: var(--doux); font-weight: 500; font-size: 0.97rem; transition: color .15s; }
 .nav a:hover { color: var(--texte); }
 .nav .nav-contact { color: var(--nuit); background: var(--turquoise); padding: 9px 18px; border-radius: 999px; font-weight: 600; }
@@ -66,52 +71,102 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .burger[aria-expanded="true"] span::before { top: 0; transform: rotate(45deg); }
 .burger[aria-expanded="true"] span::after { top: 0; transform: rotate(-45deg); }
 
-/* Accueil */
-.hero { padding-top: clamp(48px, 8vw, 96px); padding-bottom: clamp(24px, 4vw, 48px); overflow: hidden; }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: 48px; align-items: center; }
-.hero h1 { font-size: clamp(2.5rem, 5.6vw, 4.5rem); font-weight: 600; line-height: 1.03; letter-spacing: -0.025em; }
-.hero p { font-size: 1.15rem; margin-top: 26px; }
+/* Boutons */
 .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
 .btn { display: inline-block; text-decoration: none; font-weight: 600; padding: 14px 26px; border-radius: 999px; transition: background .15s, border-color .15s; }
 .btn-plein { background: var(--turquoise); color: var(--nuit); }
 .btn-plein:hover { background: #5FE6DA; }
 .btn-ligne { border: 1px solid var(--trait); color: var(--texte); }
 .btn-ligne:hover { border-color: var(--doux); }
-.portail { width: 100%; max-width: 420px; justify-self: center; height: auto; }
-.portail .trait { fill: none; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
-.portail .point { transform-box: fill-box; transform-origin: center; }
+
+/* Accueil : la mosaïque reprend le logo (deux montants hauts, un court, un point) */
+.hero { padding-top: clamp(40px, 7vw, 88px); padding-bottom: clamp(40px, 6vw, 72px); overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); font-weight: 600; line-height: 1.04; letter-spacing: -0.025em; }
+.hero p { font-size: 1.15rem; margin-top: 26px; }
+.mosaique { position: relative; display: grid; grid-template-columns: 1fr 0.82fr 1fr; gap: 14px; align-items: end; height: clamp(340px, 40vw, 500px); }
+.panneau { position: relative; overflow: hidden; border-radius: 18px; border: 1px solid var(--trait); background: var(--encre); margin: 0; }
+.panneau img { width: 100%; height: 100%; object-fit: cover; }
+.panneau::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 21, 48, 0.55), rgba(10, 21, 48, 0) 60%); pointer-events: none; }
+.p1, .p3 { height: 100%; }
+.p2 { height: 62%; }
+.p2 img { object-position: 30% 50%; }
+.p3 img { object-position: 38% 50%; }
+.lumiere { position: absolute; left: 50%; top: calc(38% - 42px); width: 22px; height: 22px; margin-left: -11px; border-radius: 50%; background: var(--degrade); box-shadow: 0 0 0 8px rgba(25, 211, 197, 0.12), 0 0 40px 8px rgba(25, 211, 197, 0.45); }
 @media (prefers-reduced-motion: no-preference) {
-  .portail .trait { stroke-dashoffset: 1; animation: tracer 1.1s cubic-bezier(.5, 0, .2, 1) forwards; }
-  .portail .t2 { animation-delay: .25s; }
-  .portail .t3 { animation-delay: .45s; }
-  .portail .t4 { animation-delay: .6s; }
-  .portail .t5 { animation-delay: .8s; }
-  .portail .point { opacity: 0; transform: scale(.2); animation: allumer .6s 1.5s ease-out forwards; }
-  @keyframes tracer { to { stroke-dashoffset: 0; } }
-  @keyframes allumer { to { opacity: 1; transform: scale(1); } }
+  .panneau { animation: lever .9s cubic-bezier(.2, .7, .2, 1) both; }
+  .p3 { animation-delay: .12s; }
+  .p2 { animation-delay: .3s; }
+  .lumiere { animation: allumer .7s 1s ease-out both; }
+  @keyframes lever { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+  @keyframes allumer { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
 }
 
+/* Un seul interlocuteur */
+.interlocuteur { background: var(--encre); border-block: 1px solid var(--trait); }
+.interlocuteur .wrap { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(36px, 6vw, 80px); align-items: center; }
+.interlocuteur figure { aspect-ratio: 4 / 5; border-radius: 18px; overflow: hidden; background: var(--nuit); border: 1px solid var(--trait); }
+.interlocuteur figure img { width: 100%; height: 100%; object-fit: cover; }
+.interlocuteur h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.comparaison { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 36px; margin-top: 36px; }
+.comparaison h3 { font-size: 1.1rem; margin-bottom: 14px; }
+.comparaison ul { list-style: none; }
+.comparaison li { position: relative; padding: 0 0 14px 26px; color: var(--doux); font-size: 0.98rem; line-height: 1.5; }
+.comparaison li::before { position: absolute; left: 0; top: 0; font-weight: 700; }
+.comparaison .avant li::before { content: "\2212"; color: var(--doux); }
+.comparaison .apres li { color: var(--texte); }
+.comparaison .apres li::before { content: "+"; color: var(--turquoise); }
+
 /* Services */
-.entete { margin-bottom: 48px; }
-.entete h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); max-width: 20ch; }
-.entete p { margin-top: 16px; }
-.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 40px; }
-.liste > div { border-top: 1px solid var(--trait); padding: 28px 0 36px; }
-.liste h3 { font-size: 1.35rem; }
-.liste p { margin-top: 10px; font-size: 1rem; }
-.invitation-ligne { margin-top: 36px; color: var(--doux); }
+.liste { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px 36px; }
+.service figure { aspect-ratio: 3 / 2; border-radius: 14px; overflow: hidden; background: var(--encre); border: 1px solid var(--trait); }
+.service figure img { width: 100%; height: 100%; object-fit: cover; }
+.service h3 { font-size: 1.35rem; margin-top: 20px; }
+.service p { margin-top: 8px; font-size: 1rem; }
+.invitation-ligne { margin-top: 48px; color: var(--doux); }
 .invitation-ligne a { color: var(--turquoise); font-weight: 600; text-underline-offset: 4px; margin-left: 8px; }
 
+/* Méthode : une vraie suite d'étapes, donc numérotée */
+.methode { background: var(--encre); border-block: 1px solid var(--trait); }
+.etapes { list-style: none; counter-reset: etape; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.etapes li { counter-increment: etape; position: relative; padding-top: 68px; }
+.etapes li::before {
+  content: counter(etape);
+  position: absolute; top: 0; left: 0; width: 46px; height: 46px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--titres); font-weight: 600; font-size: 1.15rem; color: var(--nuit);
+  background: var(--degrade);
+}
+.etapes li:not(:last-child)::after { content: ""; position: absolute; top: 22px; left: 60px; right: -18px; height: 2px; background: linear-gradient(90deg, var(--trait), rgba(34, 52, 95, 0)); }
+.etapes h3 { font-size: 1.25rem; }
+.etapes p { margin-top: 8px; font-size: 1rem; }
+
 /* Pourquoi */
-.pourquoi { background: var(--encre); border-block: 1px solid var(--trait); }
 .piliers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 40px; }
 .piliers div { position: relative; padding-top: 22px; }
 .piliers div::before { content: ""; position: absolute; top: 0; left: 0; width: 44px; height: 3px; background: var(--degrade); border-radius: 2px; }
 .piliers h3 { font-size: 1.3rem; }
 .piliers p { margin-top: 10px; font-size: 1rem; }
 
+/* Environnements maîtrisés */
+.environnements { background: var(--encre); border-block: 1px solid var(--trait); }
+.puces { list-style: none; display: flex; flex-wrap: wrap; gap: 12px; }
+.puces li { padding: 11px 20px; border: 1px solid var(--trait); border-radius: 999px; color: var(--texte); font-weight: 500; background: var(--nuit); }
+
+/* Questions */
+.questions .wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: clamp(36px, 6vw, 80px); align-items: start; }
+.questions h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+.questions .entete { margin-bottom: 0; }
+details { border-top: 1px solid var(--trait); }
+details:last-child { border-bottom: 1px solid var(--trait); }
+summary { list-style: none; cursor: pointer; padding: 22px 44px 22px 0; font-family: var(--titres); font-weight: 600; font-size: 1.2rem; position: relative; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 1.6rem; font-weight: 400; color: var(--turquoise); transition: transform .2s; }
+details[open] summary::after { transform: translateY(-50%) rotate(45deg); }
+details p { padding: 0 44px 24px 0; }
+
 /* Appel à l'action */
-.appel { text-align: left; }
+.appel { background: var(--encre); border-top: 1px solid var(--trait); }
 .appel .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px 48px; }
 .appel h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); max-width: 18ch; }
 .appel p { margin-top: 12px; }
@@ -127,11 +182,15 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
 .pied .brand { margin-bottom: 14px; }
 .pied p { font-size: 0.97rem; }
 .copyright { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--trait); color: var(--doux); font-size: 0.9rem; max-width: none; }
+.credits { margin-top: 8px; color: var(--doux); font-size: 0.82rem; max-width: none; }
+.credits a { text-underline-offset: 3px; }
 
 /* Adaptatif */
 @media (max-width: 1000px) {
   .piliers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .liste { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .etapes { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 32px; }
+  .etapes li:nth-child(2)::after { display: none; }
 }
 @media (max-width: 860px) {
   .burger { display: block; }
@@ -143,15 +202,19 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
   .nav.ouvert { display: flex; }
   .nav a { padding: 14px 0; border-bottom: 1px solid var(--trait); }
   .nav .nav-contact { margin-top: 16px; text-align: center; border-bottom: 0; padding: 13px 18px; }
-  .hero .wrap { grid-template-columns: 1fr; gap: 36px; }
-  .portail { max-width: 280px; justify-self: start; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 40px; }
+  .mosaique { height: 340px; }
+  .interlocuteur .wrap { grid-template-columns: 1fr; }
+  .interlocuteur figure { aspect-ratio: 16 / 10; }
+  .questions .wrap { grid-template-columns: 1fr; gap: 32px; }
   .pied { grid-template-columns: 1fr 1fr; }
   .pied > :first-child { grid-column: 1 / -1; }
 }
 @media (max-width: 600px) {
-  .liste, .piliers { grid-template-columns: 1fr; }
-  .liste { gap: 0; }
+  .liste, .piliers, .etapes, .comparaison { grid-template-columns: 1fr; }
+  .etapes li::after { display: none; }
   .actions .btn { width: 100%; text-align: center; }
+  .mosaique { height: 300px; gap: 10px; }
 }
 </style>
 </head>
@@ -183,7 +246,9 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
     <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span></button>
     <nav class="nav" id="menu" aria-label="Navigation principale">
       <a href="#services">Services</a>
+      <a href="#methode">Méthode</a>
       <a href="#pourquoi">Pourquoi MAZ-AVA</a>
+      <a href="#questions">Questions</a>
       <a class="nav-contact" href="#contact">Nous contacter</a>
     </nav>
   </div>
@@ -200,28 +265,40 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
           <a class="btn btn-ligne" href="#services">Voir nos services</a>
         </div>
       </div>
-      <svg class="portail" viewBox="0 0 400 480" role="img" aria-label="Un portail dont les lignes convergent vers un point lumineux">
-        <defs>
-          <linearGradient id="gp" gradientUnits="userSpaceOnUse" x1="40" y1="30" x2="360" y2="450">
-            <stop offset="0" stop-color="#2F6BFF"/>
-            <stop offset="1" stop-color="#19D3C5"/>
-          </linearGradient>
-          <radialGradient id="lueur" cx="50%" cy="50%" r="50%">
-            <stop offset="0" stop-color="#19D3C5" stop-opacity=".55"/>
-            <stop offset="1" stop-color="#19D3C5" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <g stroke="url(#gp)">
-          <g opacity=".16"><path class="trait t5" pathLength="1" stroke-width="3" d="M165 185V440"/><path class="trait t5" pathLength="1" stroke-width="3" d="M235 185V440"/></g>
-          <g opacity=".3"><path class="trait t4" pathLength="1" stroke-width="4" d="M135 140V440"/><path class="trait t4" pathLength="1" stroke-width="4" d="M265 140V440"/></g>
-          <g opacity=".5"><path class="trait t3" pathLength="1" stroke-width="6" d="M95 90V440"/><path class="trait t3" pathLength="1" stroke-width="6" d="M305 90V440"/></g>
-          <path class="trait t1" pathLength="1" stroke-width="10" d="M50 40V440"/>
-          <path class="trait t1" pathLength="1" stroke-width="10" d="M350 40V440"/>
-          <path class="trait t2" pathLength="1" stroke-width="10" d="M200 262V440"/>
-        </g>
-        <circle class="point" cx="200" cy="215" r="60" fill="url(#lueur)"/>
-        <circle class="point" cx="200" cy="215" r="15" fill="url(#gp)"/>
-      </svg>
+      <div class="mosaique">
+        <figure class="panneau p1"><img src="https://images.unsplash.com/photo-1785682117394-4c8d27afc12a?auto=format&amp;fit=crop&amp;w=700&amp;q=70" width="700" height="1000" fetchpriority="high" alt="Technicien contrôlant des baies de serveurs avec un outil de diagnostic"></figure>
+        <figure class="panneau p2"><img src="https://images.unsplash.com/photo-1691435828932-911a7801adfb?auto=format&amp;fit=crop&amp;w=600&amp;q=70" width="600" height="800" fetchpriority="high" alt="Équipement réseau avec câbles Ethernet branchés"></figure>
+        <figure class="panneau p3"><img src="https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?auto=format&amp;fit=crop&amp;w=700&amp;q=70" width="700" height="1000" fetchpriority="high" alt="Rangée de serveurs dans une salle technique éclairée en bleu"></figure>
+        <span class="lumiere" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="interlocuteur" id="interlocuteur">
+    <div class="wrap">
+      <figure><img src="https://images.unsplash.com/photo-1757405930202-b2c3e11570fc?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="1000" loading="lazy" alt="Trois collègues réunis autour d'un ordinateur portable dans une salle de réunion"></figure>
+      <div>
+        <h2>Un seul interlocuteur pour tout votre système d'information</h2>
+        <p style="margin-top:16px">Réseau, téléphonie, sécurité, postes de travail : tout ce qui touche à votre informatique et à votre télécom passe par le même contact.</p>
+        <div class="comparaison">
+          <div class="avant">
+            <h3>Souvent aujourd'hui</h3>
+            <ul>
+              <li>Un prestataire par domaine : réseau, téléphonie, sécurité, postes.</li>
+              <li>En cas de panne, chacun renvoie la responsabilité vers l'autre.</li>
+              <li>Autant de contrats, de factures et de contacts à suivre.</li>
+            </ul>
+          </div>
+          <div class="apres">
+            <h3>Avec MAZ-AVA</h3>
+            <ul>
+              <li>Un seul contact pour l'informatique, le télécom et la sécurité.</li>
+              <li>Un diagnostic complet, sans renvoi entre prestataires.</li>
+              <li>Un seul suivi, un seul compte rendu, une vue d'ensemble.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -233,36 +310,69 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
       </div>
 
       <div class="liste">
-        <div>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1758691737568-a1572060ce5a?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Équipe en réunion dans un bureau moderne"></figure>
           <h3>Infogérance et maintenance</h3>
           <p>Supervision, support aux utilisateurs et maintenance du parc, avec un interlocuteur technique identifié.</p>
-        </div>
-        <div>
+        </article>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1750711731797-25c3f2551ff8?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Switch réseau avec câbles Ethernet colorés"></figure>
           <h3>Réseaux</h3>
           <p>Conception, déploiement et sécurisation des réseaux locaux, du Wi-Fi et des liaisons entre sites.</p>
-        </div>
-        <div>
+        </article>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1598978655802-813b220e53ff?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Téléphone IP de bureau noir et gris"></figure>
           <h3>Téléphonie opérateur</h3>
           <p>Opérateurs, trunks SIP, portabilité des numéros et migration vers 3CX : toute la voix de l'entreprise, gérée de bout en bout.</p>
-        </div>
-        <div>
+        </article>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1690627931320-16ac56eb2588?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Icône de nuage blanc sur un carré de verre, sur fond bleu"></figure>
           <h3>Cloud</h3>
           <p>Migration et exploitation de Microsoft 365 et des environnements cloud, sauvegardes comprises.</p>
-        </div>
-        <div>
+        </article>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1614064548237-096f735f344f?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Cadenas posé sur un ordinateur portable, traînées lumineuses"></figure>
           <h3>Cybersécurité</h3>
           <p>Audits, protection des postes, pare-feu, chiffrement et sauvegardes, pour réduire les risques et savoir ce qui est en place.</p>
-        </div>
-        <div>
+        </article>
+        <article class="service">
+          <figure><img src="https://images.unsplash.com/photo-1639066648921-82d4500abf1a?auto=format&amp;fit=crop&amp;w=800&amp;q=70" width="800" height="533" loading="lazy" alt="Grande salle remplie de serveurs et d'équipements électroniques"></figure>
           <h3>Infrastructure</h3>
           <p>Serveurs, virtualisation et locaux techniques : architecture, mise en place et modernisation.</p>
-        </div>
+        </article>
       </div>
       <p class="invitation-ligne">Un besoin à cheval sur plusieurs domaines ?<a href="mailto:contact@maz-ava.fr">Décrivez-le nous</a></p>
     </div>
   </section>
 
-  <section class="pourquoi" id="pourquoi">
+  <section class="methode" id="methode">
+    <div class="wrap">
+      <div class="entete">
+        <h2>Comment nous travaillons</h2>
+        <p>Une démarche en quatre étapes, la même quel que soit le domaine concerné.</p>
+      </div>
+      <ol class="etapes">
+        <li>
+          <h3>Audit</h3>
+          <p>Nous faisons l'inventaire de l'existant : postes, réseau, téléphonie, sécurité et contrats.</p>
+        </li>
+        <li>
+          <h3>Plan d'action</h3>
+          <p>Vous recevez un plan priorisé et un devis détaillé, rédigés sans jargon.</p>
+        </li>
+        <li>
+          <h3>Mise en œuvre</h3>
+          <p>Nous intervenons selon un planning validé avec vous, en limitant les coupures.</p>
+        </li>
+        <li>
+          <h3>Suivi</h3>
+          <p>Supervision, comptes rendus réguliers et points d'amélioration dans la durée.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="pourquoi">
     <div class="wrap">
       <div class="entete">
         <h2>Pourquoi MAZ-AVA</h2>
@@ -270,7 +380,7 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
       <div class="piliers">
         <div>
           <h3>Clarté et simplicité</h3>
-          <p>Des offres lisibles, des devis détaillés et des comptes rendus sans jargon. Un seul interlocuteur pour l'informatique et le télécom.</p>
+          <p>Des offres lisibles, des devis détaillés et des comptes rendus sans jargon.</p>
         </div>
         <div>
           <h3>Confiance</h3>
@@ -284,6 +394,50 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
           <h3>Maîtrise technique</h3>
           <p>Une expertise de terrain, des postes de travail jusqu'aux opérateurs télécom.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="environnements" id="environnements">
+    <div class="wrap">
+      <div class="entete">
+        <h2>Les environnements que nous maîtrisons</h2>
+        <p>Nous intervenons sur les solutions que les entreprises utilisent déjà, sans les remplacer par principe.</p>
+      </div>
+      <ul class="puces">
+        <li>Microsoft 365 et Azure</li>
+        <li>3CX</li>
+        <li>Trunks SIP et opérateurs</li>
+        <li>SonicWall</li>
+        <li>MikroTik</li>
+        <li>Bitdefender</li>
+        <li>Veeam</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="questions" id="questions">
+    <div class="wrap">
+      <div class="entete">
+        <h2>Les questions que l'on nous pose</h2>
+      </div>
+      <div>
+        <details>
+          <summary>Je travaille déjà avec plusieurs prestataires. Comment se passe la reprise ?</summary>
+          <p>Nous commençons par un audit de l'existant, puis nous reprenons les domaines un par un, au rythme qui vous convient. Vos contrats en cours sont respectés.</p>
+        </details>
+        <details>
+          <summary>Puis-je ne confier qu'un domaine pour commencer ?</summary>
+          <p>Oui. Beaucoup de projets démarrent par un seul sujet, comme la téléphonie ou la sécurité. Les autres domaines peuvent suivre quand vous le souhaitez.</p>
+        </details>
+        <details>
+          <summary>Comment les prestations sont-elles chiffrées ?</summary>
+          <p>Chaque intervention fait l'objet d'un devis détaillé, validé avant le début des travaux.</p>
+        </details>
+        <details>
+          <summary>Garde-t-on la main sur nos accès et notre documentation ?</summary>
+          <p>Oui. Vos accès, vos configurations et votre documentation restent les vôtres, et vous y avez accès à tout moment.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -324,11 +478,13 @@ section { padding: clamp(64px, 9vw, 116px) 0; }
         <h3>Contact</h3>
         <ul>
           <li><a href="mailto:contact@maz-ava.fr">contact@maz-ava.fr</a></li>
-          <li><a href="#pourquoi">Pourquoi MAZ-AVA</a></li>
+          <li><a href="#methode">Notre méthode</a></li>
+          <li><a href="#questions">Questions fréquentes</a></li>
         </ul>
       </div>
     </div>
     <p class="copyright">© 2026 MAZ-AVA Technologies. Tous droits réservés.</p>
+    <p class="credits">Photos : Valentin Lacoste, Albert Stoynov, Kevin Ache, Marcel Petzold, Vitaly Gariev, User_Pascal, Devin Pickell, Hazel Z, FlyD, Matthieu Beaumont, via <a href="https://unsplash.com">Unsplash</a>.</p>
   </div>
 </footer>
 
